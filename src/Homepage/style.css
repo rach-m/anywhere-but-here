@@ -1,0 +1,63 @@
+body {margin: 0;
+  background-image:url('../media/train-2373323_1920.jpg');
+  background-repeat: no-repeat;
+height: 100vh;
+text-align: center;
+background-position: center;
+}
+
+header{
+background: black;
+height: 150px;
+width: 100%;
+}
+footer{
+  position: absolute;
+  bottom: 0;
+  height: 125px;
+  width: 100%;
+  background:black;
+}
+
+.flex-wrapper {
+  height: 60vh;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  text-align:center;
+  flex-direction: column;
+  flex-grow: 1;
+  color:turquoise
+
+}
+
+h1{
+ text-shadow:3px 3px #000000;
+font-family: 'Gravitas One', cursive;
+font-size: 85px;
+margin-bottom: 0;
+}
+
+h2{
+font-family: 'Open Sans', sans-serif;
+text-shadow:2px 2px #000000;
+font-weight: 600;
+font-style: italic;
+font-size: 30px;
+}
+
+button{
+  background: black;
+  border: none;
+border: 1px solid turquoise;
+padding: 10px;
+margin: 3px;
+border-radius:10px;
+}
+
+a{
+font-family: 'Open Sans', sans-serif;
+text-decoration: none;
+color: turquoise;
+font-size:18px;
+}

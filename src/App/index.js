@@ -1,11 +1,14 @@
 import React, { Component } from "react";
+import Homepage from '../Homepage';
 import "./style.css";
+
 
 class App extends Component {
   render() {
 
-    return <div className="App">Go Team</div>;
-  }
+return <Homepage />
+
+}
 }
 
 export default App;
