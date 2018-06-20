@@ -2,7 +2,7 @@
   "name": "project-3",
   "version": "0.1.0",
   "private": true,
-   "proxy": "http://localhost:4567",
+  "proxy": "http://localhost:4567",
   "dependencies": {
     "bluebird": "^3.5.1",
     "body-parser": "^1.18.3",
@@ -12,7 +12,6 @@
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-scripts": "1.1.4"
-
   },
   "scripts": {
     "start": "react-scripts start",
@@ -20,5 +19,4 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }
-
 }
