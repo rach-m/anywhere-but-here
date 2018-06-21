@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./style.css";
 // import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
+
 class CreateTripPage extends Component {
   constructor(props) {
     super(props);
@@ -69,9 +70,11 @@ class CreateTripPage extends Component {
 
   render() {
     return (
+
       <div className="CreateTrip">
         <h1>Trip</h1>
         <form>
+          
           <label for="budget">Budget</label>
           <input type="number" name="budget" placeholder="$" />
 
@@ -88,6 +91,7 @@ class CreateTripPage extends Component {
             <input type="submit" value="submit" />
           </p>
         </form>
+        <footer>this is a footer</footer>
       </div>
     );
   }
