@@ -9,13 +9,13 @@ background-position: center;
 header{
 background: black;
 height: 150px;
-width: 100%;
+width: 100vw;
 }
 footer{
   position: absolute;
   bottom: 0;
   height: 125px;
-  width: 100%;
+  width: 100vw;
   background:black;
 }
 

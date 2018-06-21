@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./style.css";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Link } from "react-router-dom";
 
 class Homepage extends Component {
   render() {
@@ -10,7 +10,7 @@ class Homepage extends Component {
           <header>
             <nav>HERE IS A NAV!</nav>
           </header>
-          <div class="flex-wrapper">
+          <div className="flex-wrapper">
             <h1>Anywhere But Here</h1>
             <h2>Luxurious escapes for less</h2>
 
