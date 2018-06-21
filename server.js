@@ -25,7 +25,11 @@ app.post("/trips.json", (request, response) => {
     city_name: request.body.city_name
   };
   Trip.create(newTrip).then(newTrip => {
-    response.json(data);
+    // fetch(`https://api.sandbox.amadeus.com/v1.2/flights/inspiration-search?apikey=wuSjsq5981Vet1MPJkhu3FB4HxAABw1U&origin=${newTrip.city_id}&departure_date=${newTrip.departure_date}&duration=${newTrip.duration}&max_price=${newTrip.budget}`)
+    // .then(data => {
+      response.json(data)
+      console.log(data)
+    // })
   });
 });
 
