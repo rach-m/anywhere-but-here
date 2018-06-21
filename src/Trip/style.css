@@ -1,0 +1,27 @@
+.HomePage {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.HomePage .image-wrapper {
+  width: 25%;
+}
+
+.HomePage .image-wrapper img {
+  width: 300px;
+  object-fit: cover;
+  height: 300px;
+}
+
+.HomePage .building-details h3 {
+  font-family: 'Merriweather', serif;
+}
+
+.HomePage .building-details {
+  padding: 1rem;
+  font-family: 'Lato', sans-serif;
+  line-height: .5em;
+}
+
+
