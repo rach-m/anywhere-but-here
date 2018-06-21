@@ -43,7 +43,6 @@ class App extends Component {
             <Route path="/trips/create" exact component={CreateTripPage} />
           </div>
         </Router>;
-        <Homepage />
 
       </div>;
   }
