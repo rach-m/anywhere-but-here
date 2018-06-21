@@ -1,6 +1,6 @@
-const  express = require('express');
-const path = require('path');
-const bodyparser = require('body-parser');
+const express = require("express");
+const path = require("path");
+const bodyparser = require("body-parser");
 
 // Create a new Express application (web server)
 const app = express();
@@ -11,10 +11,20 @@ const PORT = process.env.PORT || 4567;
 const jsonParser = bodyParser.json();
 app.use(jsonParser);
 
-
-
 app.get("/trips/:id.json", (request, response) => {
   Trip.find(request.params.id).then(data => {
+    response.json(data);
+  });
+});
+
+app.post("/trips.json", (request, response) => {
+  newTrip = {
+    budget: request.body.budget,
+    departure_date: request.body.departure_date,
+    duration: request.body.duration,
+    city_name: request.body.city_name
+  };
+  Trip.create(newTrip).then(newTrip => {
     response.json(data);
   });
 });
@@ -31,5 +41,3 @@ if (process.env.NODE_ENV == "production") {
 app.listen(PORT, () => {
   console.log(`Express web server listening on port ${PORT}`);
 });
-
-
