@@ -1,0 +1,10 @@
+.information{
+  text-decoration: none;
+  margin: 0 auto;
+  width: 50%;
+  height: 30vw;
+  text-align: center;
+  background: rgba(175, 175, 175, .5);
+  border-radius: 20px;
+  font-size: 20px;
+}
