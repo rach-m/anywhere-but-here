@@ -6,12 +6,12 @@ class CreateTripPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      trips: [],
       trip_id: "",
       budget: "",
       departure_date: "",
       duration: "",
-      name: ""
+      city_name: "",
+      created: false
     };
 
     this.onFormChange = this.onFormChange.bind(this);
@@ -34,20 +34,21 @@ class CreateTripPage extends Component {
       departure_date: this.state.departure_date,
       duration: this.state.duration,
       city_name: this.state.city_name
-    };
-        fetch(`https://api.sandbox.amadeus.com/v1.2/flights/inspiration-search?apikey=wuSjsq5981Vet1MPJkhu3FB4HxAABw1U&origin=${this.state.city_name}&departure_date=${this.state.departure_date}&duration=${this.state.duration}&max_price=${this.state.budget}`)
-          .then(response => response.json())
-          .then(trips => {
-            this.setState({ trips });
-            // console.log(trips);
-            // let randomTrip = Math.floor(Math.random() * trips.results.length);
-            // console.log(trips.origin);
-            // console.log(trips.results[randomTrip]);
-            // console.log(trips.results[randomTrip].destination);
-            // console.log(trips.results[randomTrip].departure_date);
-            // console.log(trips.results[randomTrip].return_date);
-            // console.log(`$${trips.results[randomTrip].price}`);
-          });
+    }
+    fetch ((`/trips.json`), {
+      method: 'POST',
+      body: JSON.stringify(newTrip),
+      headers: {
+        'Accept': "application/json",
+        'Content-type': "application/json"
+      }
+    }).then(response => response.json()).then(trip=> {
+      console.log(trip)
+      this.setState({
+        created: true,
+      })
+    })
+      //
   }
 
   // componentDidMount() {
@@ -68,16 +69,9 @@ class CreateTripPage extends Component {
 
   render() {
     return (
-<<<<<<< HEAD
-    <div className='CreateTrip'>
-    <h1>Trip</h1>
-    <form>
-        
-=======
       <div className="CreateTrip">
         <h1>Trip</h1>
         <form>
->>>>>>> master
           <label for="budget">Budget</label>
           <input type="number" name="budget" placeholder="$" />
 
