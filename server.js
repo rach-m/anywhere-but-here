@@ -13,8 +13,11 @@ app.use(jsonParser);
 
 
 
-
-
+app.get("/trips/:id.json", (request, response) => {
+  Trip.find(request.params.id).then(data => {
+    response.json(data);
+  });
+});
 
 // In production, any request that doesn't match a previous route
 // should send the front-end application, which will handle the route.

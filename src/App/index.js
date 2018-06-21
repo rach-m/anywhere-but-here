@@ -15,6 +15,9 @@ class App extends Component {
     };
   }
 
+<<<<<<< HEAD
+return<Homepage />
+=======
   componentDidMount() {
     fetch(
       `https://api.sandbox.amadeus.com/v1.2/flights/inspiration-search?apikey=wuSjsq5981Vet1MPJkhu3FB4HxAABw1U&origin=WHR&departure_date=2018-06-29&duration=5&max_price=500`
@@ -34,6 +37,7 @@ class App extends Component {
         console.log(`$${trips.results[randomTrip].price}`);
       });
   }
+>>>>>>> master
 
   render() {
     return <div>
