@@ -5,7 +5,7 @@ const Trip = {};
 Trip.create = newTrip => {
   return db.one(`INSERT into trips
   (budget, departure_date, duration, airport_id)
-  VALUES ($<budget>, $<departure_date>, $<duration>, $<airport_id>) RETURNING *`, newTrip);
+  VALUES ($<budget>, $<departure_date>, $<duration>, $<airport_id>) RETURNING *`, newTrip)
 };
 
 Trip.all = () => {
