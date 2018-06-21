@@ -47,7 +47,6 @@ return<Homepage />
             <Route path="/trips/create" exact component={CreateTripPage} />
           </div>
         </Router>;
-        <Homepage />
 
       </div>;
   }
