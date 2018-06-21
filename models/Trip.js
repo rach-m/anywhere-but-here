@@ -2,11 +2,11 @@ const db = require('../database/connection');
 
 const Trip = {};
 
-// Trip.create = newTrip => {
-//   return db.one(`INSERT into trips
-//   (budget, departure_date, duration, airport_id)
-//   VALUES ($<budget>, $<departure_date>, $<duration>, $<airport_id>) RETURNING *`, newTrip)
-// };
+Trip.create = newTrip => {
+  return db.one(`INSERT into trips
+  (budget, departure_date, duration, city_id)
+  VALUES ($<budget>, $<departure_date>, $<duration>, $<airport_id>) RETURNING *`, newTrip)
+};
 
 // Trip.all = () => {
 //   return db.any('SELECT * FROM trips');
