@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import "./style.css";
+import "./style.css";
 // import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 class CreateTripPage extends Component {
@@ -11,6 +11,7 @@ class CreateTripPage extends Component {
     <div className='CreateTrip'>
     <h1>Trip</h1>
     <form>
+        
           <label for="budget">Budget</label>
           <input type="number" name="budget" placeholder="$"/>
 
