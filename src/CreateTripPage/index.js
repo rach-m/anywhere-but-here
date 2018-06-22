@@ -7,7 +7,6 @@ class CreateTripPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      trip_id: "",
       budget: "",
       departure_date: "",
       duration: "",
@@ -45,14 +44,23 @@ class CreateTripPage extends Component {
         Accept: "application/json",
         "Content-type": "application/json"
       }
-    }).then(trip => {
-      console.log("happened");
-      this.setState({ created: true, redirectToNewPage: true });
-    });
+    }).then(trip => trip.json())
+    .then(json =>{
+      console.log(json.trip_id)
+         this.setState({
+           created: true,
+           redirectToNewPage: true,
+           trip_id: json.trip_id
+         });
+    }
+
+
+    );
 
   }
 
   componentDidMount() {
+    let id = this.state.trip_id;
     fetch("/cities.json")
       .then(response => response.json())
       .then(cities => {
@@ -64,7 +72,8 @@ class CreateTripPage extends Component {
 
   render() {
     if (this.state.redirectToNewPage) {
-   return <Redirect to="/trips/new" />;
+      let id = this.state.trip_id;
+   return <Redirect to={`/trips/${id}.json`} />;
       }
     return (
 
@@ -92,7 +101,6 @@ class CreateTripPage extends Component {
             <input type="submit" value="submit" />
           </p>
         </form>
-        </div>
         <footer>this is a footer</footer>
       </div>
     );
