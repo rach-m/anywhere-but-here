@@ -52,15 +52,15 @@ class CreateTripPage extends Component {
 
   }
 
-  // componentDidMount() {
-  //   fetch("/cities.json")
-  //     .then(response => response.json())
-  //     .then(cities => {
-  //       this.setState({
-  //         cities: cities
-  //       });
-  //     });
-  // }
+  componentDidMount() {
+    fetch("/cities.json")
+      .then(response => response.json())
+      .then(cities => {
+        this.setState({
+          cities: cities
+        });
+      });
+  }
 
   render() {
     if (this.state.redirectToNewPage) {

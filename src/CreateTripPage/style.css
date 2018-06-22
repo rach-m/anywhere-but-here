@@ -3,7 +3,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
-  width: 101vw;
+  width: 100vw;
   /* background-position: center; */
   color:rgb(317, 3, 140); 
   position: relative;
@@ -37,9 +37,9 @@ label {
 
 
  header {
-   left: 0;
+  left: 0;
   background: black;
-  height: 30px;
+  height: 10px;
   width: 100%;
 } 
 
