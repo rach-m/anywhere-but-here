@@ -15,7 +15,7 @@ app.use(jsonParser);
 
 app.get("/cities.json", (request, response) => {
   City.all().then(data => {
-   response.json(data);
+  response.json(data);
 
   });
 });
