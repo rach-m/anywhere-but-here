@@ -6,12 +6,13 @@ class CreateTripPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      trips: [],
       trip_id: "",
       budget: "",
       departure_date: "",
       duration: "",
-      name: ""
+      city_id: "",
+      created: false,
+      cities:[]
     };
 
     this.onFormChange = this.onFormChange.bind(this);
@@ -33,51 +34,36 @@ class CreateTripPage extends Component {
       budget: this.state.budget,
       departure_date: this.state.departure_date,
       duration: this.state.duration,
-      city_name: this.state.city_name
+      city_id: this.state.city_id
     };
-        fetch(`https://api.sandbox.amadeus.com/v1.2/flights/inspiration-search?apikey=wuSjsq5981Vet1MPJkhu3FB4HxAABw1U&origin=${this.state.city_name}&departure_date=${this.state.departure_date}&duration=${this.state.duration}&max_price=${this.state.budget}`)
-          .then(response => response.json())
-          .then(trips => {
-            this.setState({ trips });
-            // console.log(trips);
-            // let randomTrip = Math.floor(Math.random() * trips.results.length);
-            // console.log(trips.origin);
-            // console.log(trips.results[randomTrip]);
-            // console.log(trips.results[randomTrip].destination);
-            // console.log(trips.results[randomTrip].departure_date);
-            // console.log(trips.results[randomTrip].return_date);
-            // console.log(`$${trips.results[randomTrip].price}`);
-          });
+    fetch(`/trips`, {
+      method: "POST",
+      body: JSON.stringify(newTrip),
+      headers: {
+        Accept: "application/json",
+        "Content-type": "application/json"
+      }
+    }).then(trip => {
+      console.log("happened");
+      this.setState({ created: true });
+    });
   }
 
-  // componentDidMount() {
-  //   fetch(`https://api.sandbox.amadeus.com/v1.2/flights/inspiration-search?apikey=wuSjsq5981Vet1MPJkhu3FB4HxAABw1U&origin=${this.state.city_name}&departure_date=${this.state.departure_date}&duration=${this.state.duration}&max_price=${this.state.budget}`)
-  //     .then(response => response.json())
-  //     .then(trips => {
-  //       this.setState({ trips });
-  //       // console.log(trips);
-  //       // let randomTrip = Math.floor(Math.random() * trips.results.length);
-  //       // console.log(trips.origin);
-  //       // console.log(trips.results[randomTrip]);
-  //       // console.log(trips.results[randomTrip].destination);
-  //       // console.log(trips.results[randomTrip].departure_date);
-  //       // console.log(trips.results[randomTrip].return_date);
-  //       // console.log(`$${trips.results[randomTrip].price}`);
-  //     });
-  // }
+  componentDidMount() {
+    fetch("/cities.json")
+      .then(response => response.json())
+      .then(cities => {
+        this.setState({
+          cities: cities
+        });
+      });
+  }
 
   render() {
     return (
-<<<<<<< HEAD
-    <div className='CreateTrip'>
-    <h1>Trip</h1>
-    <form>
-        
-=======
       <div className="CreateTrip">
         <h1>Trip</h1>
-        <form>
->>>>>>> master
+        <form onChange={this.onFormChange} onSubmit={this.onFormSubmit}>
           <label for="budget">Budget</label>
           <input type="number" name="budget" placeholder="$" />
 
@@ -87,8 +73,13 @@ class CreateTripPage extends Component {
           <label for="duration">Duration</label>
           <input type="number" name="duration" placeholder="3" />
 
-          <label for="origin">Origin</label>
-          <input type="text" name="name" placeholder="JFK" />
+          <label for="name">Origin</label>
+          <select name = 'city_id'>
+           { this.state.cities.map((city, index) => {
+             return <option key = {index} value = {city.city_id} name = 'city_id'>{city.city_name}</option>
+           })}
+          </select>
+          {/* <input type="text" name="city_id" placeholder="BOS" /> */}
 
           <p>
             <input type="submit" value="submit" />

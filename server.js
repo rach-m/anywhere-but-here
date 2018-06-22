@@ -1,6 +1,8 @@
 const express = require("express");
 const path = require("path");
-const bodyparser = require("body-parser");
+const bodyParser = require("body-parser");
+const Trip = require('./models/Trip')
+const City = require('./models/Airport')
 
 // Create a new Express application (web server)
 const app = express();
@@ -17,17 +19,26 @@ app.get("/trips/:id.json", (request, response) => {
   });
 });
 
-app.post("/trips.json", (request, response) => {
+app.get("/cities.json", (request, response) => {
+  City.all().then(data => {
+   response.json(data);
+  });
+});
+
+
+
+app.post("/trips", (request, response) => {
   newTrip = {
     budget: request.body.budget,
     departure_date: request.body.departure_date,
     duration: request.body.duration,
-    city_name: request.body.city_name
+    city_id: request.body.city_id
   };
-  Trip.create(newTrip).then(newTrip => {
+  Trip.create(newTrip).then(data => {
     response.json(data);
   });
 });
+
 
 // In production, any request that doesn't match a previous route
 // should send the front-end application, which will handle the route.

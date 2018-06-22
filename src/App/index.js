@@ -25,14 +25,14 @@ class App extends Component {
         this.setState({
           trips
         });
-        console.log(trips);
-        let randomTrip = Math.floor(Math.random() * trips.results.length)
-        console.log(trips.origin);
-        console.log(trips.results[randomTrip]);
-        console.log(trips.results[randomTrip].destination);
-        console.log(trips.results[randomTrip].departure_date);
-        console.log(trips.results[randomTrip].return_date);
-        console.log(`$${trips.results[randomTrip].price}`);
+      //   console.log(trips);
+      //   let randomTrip = Math.floor(Math.random() * trips.results.length)
+      //   console.log(trips.origin);
+      //   console.log(trips.results[randomTrip]);
+      //   console.log(trips.results[randomTrip].destination);
+      //   console.log(trips.results[randomTrip].departure_date);
+      //   console.log(trips.results[randomTrip].return_date);
+      //   console.log(`$${trips.results[randomTrip].price}`);
       });
   }
   render() {
