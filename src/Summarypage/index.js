@@ -10,7 +10,7 @@ class Summarypage extends Component {
       departure_date: '',
       duration: '',
       budget: '',
-      trip_id: ''
+      trip_id: '',
     };
   }
 
