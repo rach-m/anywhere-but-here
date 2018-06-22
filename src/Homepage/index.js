@@ -6,7 +6,7 @@ class Homepage extends Component {
   render() {
     return (
       <Router>
-        <div className="App">
+        <div className="Homepage">
           <header>
             <nav>HERE IS A NAV!</nav>
           </header>

@@ -72,17 +72,20 @@ class CreateTripPage extends Component {
     return (
 
       <div className="CreateTrip">
-        <h1>Trip</h1>
+        <header></header>
+        <div class="formBox">
+        <h1 className="trip">Plan Your Escape</h1>
+      
         <form>
           
           <label for="budget">Budget</label>
-          <input type="number" name="budget" placeholder="$" />
+          <input type="number" name="budget" placeholder="$" value={this.state.budget} />
 
           <label for="departure_date">Departing</label>
-          <input type="date" name="departure_date" placeholder="" />
+          <input type="date" name="departure_date"/>
 
           <label for="duration">Duration</label>
-          <input type="number" name="duration" placeholder="3" />
+          <input type="number" name="duration" placeholder="3 days" />
 
           <label for="origin">Origin</label>
           <input type="text" name="name" placeholder="JFK" />
@@ -91,6 +94,7 @@ class CreateTripPage extends Component {
             <input type="submit" value="submit" />
           </p>
         </form>
+        </div>
         <footer>this is a footer</footer>
       </div>
     );

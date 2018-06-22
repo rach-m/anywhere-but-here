@@ -42,9 +42,9 @@ class App extends Component {
             <Route path="/" exact component={Homepage} />
             <Route path="/trips/create" exact component={CreateTripPage} />
           </div>
-        </Router>;
+        </Router>
 
-      </div>;
+      </div>
   }
 }
 
