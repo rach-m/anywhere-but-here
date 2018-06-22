@@ -1,10 +1,30 @@
-.information{
-  text-decoration: none;
+.Summarypage{
+  background: url("http://static.asiawebdirect.com/m/bangkok/portals/bali-indonesia-com/shared/teasersL/top10/top10-hotels/teaserMultiLarge/imageHilight/viceroy-bali-L.jpg");
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+.destination{
+  height: 300px;
+  width: 300px;
+}
+.information-box{
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin: 0 auto;
   width: 50%;
-  height: 30vw;
+  height: 40vw;
   text-align: center;
   background: rgba(175, 175, 175, .5);
   border-radius: 20px;
-  font-size: 20px;
 }
+
+/* .information{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  flex-grow: 1;
+  height: -50vh;
+} */

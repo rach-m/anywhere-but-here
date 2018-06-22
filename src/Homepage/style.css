@@ -1,6 +1,6 @@
 body {margin: 0;
-  background-image:url('../media/train-2373323_1920.jpg');
-  background-repeat: no-repeat;
+background-image:url('../media/train-2373323_1920.jpg');
+background-repeat: no-repeat;
 height: 100vh;
 text-align: center;
 background-position: center;
@@ -32,7 +32,7 @@ footer{
 }
 
 h1{
- text-shadow:3px 3px #000000;
+text-shadow:3px 3px #000000;
 font-family: 'Gravitas One', cursive;
 font-size: 85px;
 margin-bottom: 0;
