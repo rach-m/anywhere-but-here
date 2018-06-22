@@ -20,8 +20,8 @@ app.get("/cities.json", (request, response) => {
   });
 });
 
-app.get("/trips/.json", (request, response) => {
-  City.all().then(data => {
+app.get("/trips/:id.json", (request, response) => {
+  Trip.find(request.params.id).then(data => {
     response.json(data);
   });
 });
@@ -35,8 +35,10 @@ app.post("/trips", (request, response) => {
     duration: request.body.duration,
     city_id: request.body.city_id
   };
+  // console.log(newTrip)
   Trip.create(newTrip).then(data => {
-    response.redirect(301, "/trips/new");
+    // console.log(newTrip)
+    // console.log(data);
     response.json(data);
 
   });

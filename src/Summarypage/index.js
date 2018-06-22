@@ -6,17 +6,26 @@ class Summarypage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      newTrip: []
+      id: '',
+      city_code: '',
+      departure_date: '',
+      duration: '',
+      budget: ''
     };
   }
 
   componentDidMount() {
-    fetch("/trips/create").then(newTrip => {
+    let id = this.props.match.params.id;
+    fetch(`/trips/${id}.json`).then(newTrip => {
       this.setState({
-        newTrip: newTrip
+        id: newTrip.id,
+        city_code: newTrip.city_code,
+        departure_date: newTrip.departure_date,
+        duration: newTrip.duration,
+        budget: newTrip.budget
       });
     });
-    console.log(this.state.newTrip);
+    console.log(this.state.duration);
     fetch(
       `https://api.sandbox.amadeus.com/v1.2/flights/inspiration-search?apikey=wuSjsq5981Vet1MPJkhu3FB4HxAABw1U&origin=${
         this.state.city_code
@@ -40,7 +49,6 @@ class Summarypage extends Component {
       });
   }
   render() {
-    return <div className="Summarypage">
         <header>
           <nav>HERE IS A NAV!</nav>
         </header>
@@ -49,14 +57,8 @@ class Summarypage extends Component {
             <h2 id="head">Summary</h2>
             <img className="destination" src="https://cdn-image.travelandleisure.com/sites/default/files/styles/1600x1000/public/1508524504/paris-ROOFTOP1017.jpg?itok=arOAqg7r" />
 
-            <p>Destination: MHT</p>
+            <p>Destination: {this.state.destination}</p>
             <p> Departure_date: 2018-06-29</p>
             <p> Return_date: 2018-07-04</p>
             <p> Price: 211.40</p>
           </div>
-        </div>
-        <footer>this is a footer</footer>
-      </div>;
-  }
-}
-export default Summarypage;

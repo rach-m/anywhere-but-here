@@ -16,7 +16,7 @@ class App extends Component {
           <div>
             <Route path="/" exact component={Homepage} />
             <Route path="/trips/create" exact component={CreateTripPage} />
-            <Route path="/trips/summary" exact component={Summarypage} />
+            <Route path="/trips/:id" exact component={Summarypage} />
           </div>
         </Router>
 
