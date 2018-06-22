@@ -6,38 +6,25 @@ class Summarypage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: '',
       city_code: '',
       departure_date: '',
       duration: '',
-      budget: ''
+      budget: '',
+      trip_id: ''
     };
   }
 
   componentDidMount() {
-    let id = this.props.match.params.id;
-    fetch(`/trips/${id}.json`).then(newTrip => {
-      this.setState({
-        id: newTrip.id,
-        city_code: newTrip.city_code,
-        departure_date: newTrip.departure_date,
-        duration: newTrip.duration,
-        budget: newTrip.budget
-      });
-    });
-    console.log(this.state.duration);
+    fetch(`/trips/${this.props.id}.json`).then(json => json.json().then(data =>{
+    // console.log(data);
     fetch(
       `https://api.sandbox.amadeus.com/v1.2/flights/inspiration-search?apikey=wuSjsq5981Vet1MPJkhu3FB4HxAABw1U&origin=${
-        this.state.city_code
-      }&departure_date=${this.state.departure_date}&duration=${
-        this.state.duration
-      }&max_price=${this.state.budget}`
-    )
-      .then(response => response.json())
-      .then(trips => {
-        this.setState({
-          trips
-        });
+        data.city_code
+      }&departure_date=${data.departure_date}&duration=${
+        data.duration
+      }&max_price=${data.budget}`
+    )})
+
         //   console.log(trips);
         //   let randomTrip = Math.floor(Math.random() * trips.results.length)
         //   console.log(trips.origin);
@@ -46,8 +33,12 @@ class Summarypage extends Component {
         //   console.log(trips.results[randomTrip].departure_date);
         //   console.log(trips.results[randomTrip].return_date);
         //   console.log(`$${trips.results[randomTrip].price}`);
-      });
-  }
+     ).then(response =>this.setState({
+       city_code: this.state.city_code,
+      departure_date: this.state.departure_date,
+      budget: this.state.budget
+     }))
+    console.log(this.state.budget) };
   render() {
 
     return (
