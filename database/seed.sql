@@ -1,3 +1,5 @@
 \c travel_db
 
-\copy cities from "./city_code.csv" DELIMITER ","  CSV ;
+DELETE FROM cities;
+
+\copy cities from 'citycode.csv' DELIMITER ','  CSV ;
