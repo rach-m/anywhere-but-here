@@ -44,21 +44,16 @@ class Summarypage extends Component {
         <header>
           <nav>HERE IS A NAV!</nav>
         </header>
-        <h1>Summary</h1>
-        <div className="information-box">
-          <div className="information">
+        <div className="info-box">
+          <div className="info">
+            <h2 id="head">Summary</h2>
             <img className="destination" src="https://cdn-image.travelandleisure.com/sites/default/files/styles/1600x1000/public/1508524504/paris-ROOFTOP1017.jpg?itok=arOAqg7r" />
-            <p>destination: MHT</p>
-            <p> departure_date: 2018-06-29</p>
-            <p> return_date: 2018-07-04</p>
-            <p> price: 211.40</p>
+
+            <p>Destination: MHT</p>
+            <p> Departure_date: 2018-06-29</p>
+            <p> Return_date: 2018-07-04</p>
+            <p> Price: 211.40</p>
           </div>
-          <button>
-            <Link to="/trips/edit">Edit</Link>
-          </button>
-          <button>
-            <Link to="/trips/delete">Delete</Link>
-          </button>
         </div>
         <footer>this is a footer</footer>
       </div>;
