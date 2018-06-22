@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./style.css";
 // import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
+
 class CreateTripPage extends Component {
   constructor(props) {
     super(props);
@@ -85,6 +86,7 @@ class CreateTripPage extends Component {
             <input type="submit" value="submit" />
           </p>
         </form>
+        <footer>this is a footer</footer>
       </div>
     );
   }
