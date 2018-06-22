@@ -49,6 +49,7 @@ class Summarypage extends Component {
       });
   }
   render() {
+
     return (
       <div className="Summarypage">
         <header>
@@ -66,6 +67,7 @@ class Summarypage extends Component {
             <p> return_date: 2018-07-04</p>
             <p> price: 211.40</p>
           </div>
+
         </div>
         <footer>this is a footer</footer>
       </div>
