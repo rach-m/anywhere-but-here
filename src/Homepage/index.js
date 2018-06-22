@@ -15,7 +15,7 @@ class Homepage extends Component {
             <h2>Luxurious escapes for less</h2>
 
             <button>
-              <Link to="/trip/create">Plan Your Escape</Link>
+              <Link to="/trips/create">Plan Your Escape</Link>
             </button>
             <button>
               <Link to="/trip/previous">Previous Searches</Link>

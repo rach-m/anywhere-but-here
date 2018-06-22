@@ -45,10 +45,10 @@ class TripPage extends Component {
 
         <div className="Trip-details">
           <p>{this.trip_id}</p>
-          <p>Style: {this.state.budget}</p>
-          <p>City: {this.state.departure_date}</p>
-          <p>Architect: {this.state.duration}</p>
-          <p>Year Built: {this.state.airport_id}</p>
+          <p>Budget: {this.state.budget}</p>
+          <p>Departure: {this.state.departure_date}</p>
+          <p>Duration: {this.state.duration}</p>
+          <p>Airport: {this.state.airport_id}</p>
         </div>
       </div>;
   }
