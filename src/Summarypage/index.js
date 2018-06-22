@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-// import { Link } from "react-router-dom";
 import "./style.css";
-import CreateTripPage from '../CreateTripPage'
+// import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-class TripPage extends Component {
+class Summarypage extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -17,7 +16,7 @@ class TripPage extends Component {
         newTrip: newTrip
       });
     });
-    console.log(this.state.newTrip)
+    console.log(this.state.newTrip);
     fetch(
       `https://api.sandbox.amadeus.com/v1.2/flights/inspiration-search?apikey=wuSjsq5981Vet1MPJkhu3FB4HxAABw1U&origin=${
         this.state.city_code
@@ -41,17 +40,29 @@ class TripPage extends Component {
       });
   }
   render() {
-    return <div className="Trip">
 
-        <div className="Trip-details">
-          <p>{this.trip_id}</p>
-          <p>Budget: {this.state.budget}</p>
-          <p>Departure: {this.state.departure_date}</p>
-          <p>Duration: {this.state.duration}</p>
-          <p>Airport: {this.state.airport_id}</p>
+    return (
+      <div className="Summarypage">
+        <header>
+          <nav>HERE IS A NAV!</nav>
+        </header>
+        <h1>Summary</h1>
+        <div className="information-box">
+          <div className="information">
+            <img
+              className="destination"
+              src="https://cdn-image.travelandleisure.com/sites/default/files/styles/1600x1000/public/1508524504/paris-ROOFTOP1017.jpg?itok=arOAqg7r"
+            />
+            <p>destination: MHT</p>
+            <p> departure_date: 2018-06-29</p>
+            <p> return_date: 2018-07-04</p>
+            <p> price: 211.40</p>
+          </div>
+
         </div>
-      </div>;
+        <footer>this is a footer</footer>
+      </div>
+    );
   }
 }
-export default TripPage;
-
+export default Summarypage;

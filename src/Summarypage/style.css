@@ -1,0 +1,45 @@
+.Summarypage{
+  background: url("https://images.trvl-media.com/media/content/expus/graphics/launch/home/tvly/150324_flights-hero-image_1330x742.jpg");
+  background-repeat: no-repeat;
+  height: 100vh;
+  background-size: cover;
+}
+
+header{
+background: black;
+height: 150px;
+width: 100vw;
+}
+footer{
+  position: absolute;
+  bottom: -500px;
+  height: 45px;
+  width: 100vw;
+  background:black;
+}
+
+.destination{
+  height: 300px;
+  width: 300px;
+}
+.information-box{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  width: 50%;
+  height: 40vw;
+  text-align: center;
+  background: rgba(175, 175, 175, .5);
+  border-radius: 20px;
+}
+
+/* .information{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  flex-grow: 1;
+  height: -50vh;
+} */
