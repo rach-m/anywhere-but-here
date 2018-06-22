@@ -13,12 +13,6 @@ const PORT = process.env.PORT || 4567;
 const jsonParser = bodyParser.json();
 app.use(jsonParser);
 
-app.get("/trips/:id.json", (request, response) => {
-  Trip.find(request.params.id).then(data => {
-    response.json(data);
-  });
-});
-
 app.get("/cities.json", (request, response) => {
   City.all().then(data => {
    response.json(data);

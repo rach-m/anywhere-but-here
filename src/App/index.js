@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import Homepage from '../Homepage';
 import "./style.css";
+import Homepage from "../Homepage";
 import CreateTripPage from "../CreateTripPage";
-import TripPage from "../Trip";
+import Summarypage from "../Summarypage";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 
