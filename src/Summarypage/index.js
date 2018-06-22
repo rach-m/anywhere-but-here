@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Sound from "react-sound";
 import "./style.css";
 // import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
@@ -68,14 +67,6 @@ class Summarypage extends Component {
           </div>
         </div>
         <footer>this is a footer</footer>
-      <Sound
-      url="../song/Getaway.mp3"
-      playStatus={Sound.status.PLAYING}
-      playFromPosition={300 /* in milliseconds */}
-      onLoading={this.handleSongLoading}
-      onPlaying={this.handleSongPlaying}
-      onFinishedPlaying={this.handleSongFinishedPlaying}
-      />
       </div>
     )
   };
