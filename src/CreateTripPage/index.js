@@ -82,9 +82,9 @@ class CreateTripPage extends Component {
 
           <label for="name">Origin</label>
           <select name = 'city_id'>
-           { this.state.cities.map((city, index) => {
-             return <option key = {index} value = {city.city_id} name = 'city_id'>{city.city_name}</option>
-           })}
+          { this.state.cities.map((city, index) => {
+            return <option key = {index} value = {city.city_id} name = 'city_id'>{city.city_name}</option>
+          })}
           </select>
           {/* <input type="text" name="city_id" placeholder="BOS" /> */}
 
@@ -93,8 +93,6 @@ class CreateTripPage extends Component {
           </p>
         </form>
         </div>
-        <footer>this is a footer</footer>
-      </div>
     );
   }
 }
