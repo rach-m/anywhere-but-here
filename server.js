@@ -1,6 +1,8 @@
-const  express = require('express');
-const path = require('path');
-const bodyparser = require('body-parser');
+const express = require("express");
+const path = require("path");
+const bodyParser = require("body-parser");
+const Trip = require('./models/Trip')
+const City = require('./models/Airport')
 
 // Create a new Express application (web server)
 const app = express();
@@ -11,13 +13,25 @@ const PORT = process.env.PORT || 4567;
 const jsonParser = bodyParser.json();
 app.use(jsonParser);
 
+app.get("/cities.json", (request, response) => {
+  City.all().then(data => {
+  });
+});
 
 
-app.get("https://api.sandbox.amadeus.com/v1.2/flights/inspiration-search?apikey=wuSjsq5981Vet1MPJkhu3FB4HxAABw1U&origin=NYC&departure_date=2018-06-29&duration=5&max_price=500", (request, response) => {
-  Trip.all(request.params.id).then(data => {
+
+app.post("/trips", (request, response) => {
+  newTrip = {
+    budget: request.body.budget,
+    departure_date: request.body.departure_date,
+    duration: request.body.duration,
+    city_id: request.body.city_id
+  };
+  Trip.create(newTrip).then(data => {
     response.json(data);
   });
 });
+
 
 // In production, any request that doesn't match a previous route
 // should send the front-end application, which will handle the route.
@@ -31,5 +45,3 @@ if (process.env.NODE_ENV == "production") {
 app.listen(PORT, () => {
   console.log(`Express web server listening on port ${PORT}`);
 });
-
-

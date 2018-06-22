@@ -1,0 +1,22 @@
+body {
+  background-image:url('../media/c9c663d1_z.jpg');
+  background-repeat: no-repeat;
+  height: 100vh;
+  text-align: center;
+  background-position: center;
+}
+
+header {
+  background: black;
+  height: 35px;
+  width: 100vw;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  height: 35px;
+  width: 100vw;
+  background: black;
+}
+
