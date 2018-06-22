@@ -22,6 +22,7 @@ app.get("/trips/:id.json", (request, response) => {
 app.get("/cities.json", (request, response) => {
   City.all().then(data => {
    response.json(data);
+
   });
 });
 
@@ -35,7 +36,9 @@ app.post("/trips", (request, response) => {
     city_id: request.body.city_id
   };
   Trip.create(newTrip).then(data => {
+    response.redirect(301, "/trips/new");
     response.json(data);
+
   });
 });
 

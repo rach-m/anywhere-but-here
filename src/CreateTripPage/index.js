@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./style.css";
-// import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 
 
 class CreateTripPage extends Component {
@@ -13,7 +13,8 @@ class CreateTripPage extends Component {
       duration: "",
       city_id: "",
       created: false,
-      cities:[]
+      cities:[],
+      redirectToNewPage: false
     };
 
     this.onFormChange = this.onFormChange.bind(this);
@@ -46,8 +47,9 @@ class CreateTripPage extends Component {
       }
     }).then(trip => {
       console.log("happened");
-      this.setState({ created: true });
+      this.setState({ created: true, redirectToNewPage: true });
     });
+
   }
 
   componentDidMount() {
@@ -61,7 +63,11 @@ class CreateTripPage extends Component {
   }
 
   render() {
+    if (this.state.redirectToNewPage) {
+   return <Redirect to="/trips/new" />;
+      }
     return (
+
       <div className="CreateTrip">
         <h1>Trip</h1>
         <form onChange={this.onFormChange} onSubmit={this.onFormSubmit}>
