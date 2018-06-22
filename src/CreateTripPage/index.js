@@ -59,16 +59,15 @@ class CreateTripPage extends Component {
 
   }
 
-  componentDidMount() {
-    let id = this.state.trip_id;
-    fetch("/cities.json")
-      .then(response => response.json())
-      .then(cities => {
-        this.setState({
-          cities: cities
-        });
-      });
-  }
+  // componentDidMount() {
+  //   fetch("/cities.json")
+  //     .then(response => response.json())
+  //     .then(cities => {
+  //       this.setState({
+  //         cities: cities
+  //       });
+  //     });
+  // }
 
   render() {
     if (this.state.redirectToNewPage) {
@@ -78,7 +77,7 @@ class CreateTripPage extends Component {
     return (
 
       <div className="CreateTrip">
-      <header></header>
+      <header>head</header>
       <div className="formBox">
 
         <h1>New Trip</h1>
@@ -109,10 +108,6 @@ class CreateTripPage extends Component {
             <input type="submit" value="submit" />
           </p>
         </form>
-<<<<<<< HEAD
-=======
-        <footer>this is a footer</footer>
->>>>>>> master
       </div>
       <footer></footer>
       </div>
