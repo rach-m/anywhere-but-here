@@ -60,7 +60,6 @@ class CreateTripPage extends Component {
   }
 
   componentDidMount() {
-    let id = this.state.trip_id;
     fetch("/cities.json")
       .then(response => response.json())
       .then(cities => {

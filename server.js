@@ -19,9 +19,16 @@ app.get("/cities.json", (request, response) => {
 
   });
 });
+app.get("/trips.json", (request, response) => {
+  Trip.all().then(data => {
+   response.json(data);
+
+  });
+});
 
 app.get("/trips/:id.json", (request, response) => {
-  Trip.find(request.params.id).then(data => {
+  id = request.params.id;
+  Trip.find(id).then(data => {
     response.json(data);
   });
 });
