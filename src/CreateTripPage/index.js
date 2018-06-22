@@ -72,13 +72,13 @@ class CreateTripPage extends Component {
         <h1>Trip</h1>
         <form onChange={this.onFormChange} onSubmit={this.onFormSubmit}>
           <label for="budget">Budget</label>
-          <input type="number" name="budget" placeholder="$" />
+          <input type="number" name="budget" placeholder="$" value={this.state.budget} />
 
           <label for="departure_date">Departing</label>
-          <input type="date" name="departure_date" placeholder="" />
+          <input type="date" name="departure_date"/>
 
           <label for="duration">Duration</label>
-          <input type="number" name="duration" placeholder="3" />
+          <input type="number" name="duration" placeholder="3 days" />
 
           <label for="name">Origin</label>
           <select name = 'city_id'>
@@ -92,6 +92,7 @@ class CreateTripPage extends Component {
             <input type="submit" value="submit" />
           </p>
         </form>
+        </div>
         <footer>this is a footer</footer>
       </div>
     );
