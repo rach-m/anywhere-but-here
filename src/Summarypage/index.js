@@ -66,8 +66,9 @@ class Summarypage extends Component {
             </div>
           </div>
           </div>
+          </div>
           )
 }
 }
 
-export default Summarypage;
+export default Summarypage

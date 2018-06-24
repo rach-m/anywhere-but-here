@@ -18,7 +18,7 @@ class Homepage extends Component {
               <Link to="/trips/create">Plan Your Escape</Link>
             </button>
             <button>
-              <Link to="/trip/previous">Previous Searches</Link>
+              <Link to="/trips/previous">Previous Searches</Link>
             </button>
           </div>
           <footer>this is a footer</footer>

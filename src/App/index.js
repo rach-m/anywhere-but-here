@@ -19,7 +19,6 @@ class App extends Component {
             <Route path="/trips/:id.json" exact component={Summarypage} />
           </div>
         </Router>
-
       </div>
   }
 }

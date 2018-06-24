@@ -61,22 +61,17 @@ class CreateTripPage extends Component {
       .then(cities => {
         this.setState({
           cities: cities
-        });
-      });
+        })
+      })
   }
 
   render() {
-    <video id="background-video" loop autoPlay>
-      <source src="https://youtu.be/DGIXT7ce3vQ" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>;
     if (this.state.redirectToNewPage) {
       let id = this.state.trip_id;
       return <Redirect to={`/trips/${id}.json`} />;
     }
     return (
       <div className="CreateTrip">
-        <header />
         <div className="formBox">
           <h1>New Trip</h1>
           <form onChange={this.onFormChange} onSubmit={this.onFormSubmit}>

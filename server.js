@@ -2,7 +2,7 @@ const express = require("express");
 const path = require("path");
 const bodyParser = require("body-parser");
 const Trip = require('./models/Trip')
-const City = require('./models/Airport')
+const City = require('./models/City')
 
 // Create a new Express application (web server)
 const app = express();
