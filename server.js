@@ -29,6 +29,13 @@ app.get("/trips.json", (request, response) => {
   });
 });
 
+
+app.get("/trips", (request, response) => {
+  Trip.all().then(data => {
+    response.json(data);
+  });
+});
+
 //Joins the trip and city tables for the Armadeus API request
 app.get("/trips/:id.json", (request, response) => {
   id = request.params.id;

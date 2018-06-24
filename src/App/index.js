@@ -20,7 +20,7 @@ class App extends Component {
             <Route path="/trips/create" exact component={CreateTripPage} />
             <Route path="/trips/:id.json" exact component={Summarypage} />
             <Route path="/trips/:id/edit" exact component={EditPage} />
-            <Route path="/trips.json" exact component={Alltripspage} />
+            <Route path="/trips" exact component={Alltripspage} />
           </div>
         </Router>
       </div>;
