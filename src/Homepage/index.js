@@ -11,11 +11,11 @@ class Homepage extends Component {
             <h1>Anywhere But Here</h1>
             <h2>Luxurious escapes for less</h2>
 
-            <button>
-              <Link to="/trips/create">Plan Your Escape</Link>
+            <button onClick = {<Link to = "/trips/create" />}>
+              Plan Your Escape
             </button>
             <button>
-              <Link to="/trips/previous">Previous Searches</Link>
+              <Link to = "/trips/previous">Previous Searches</Link>
             </button>
           </div>
         </div>
