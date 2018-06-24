@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "./style.css";
 import { Redirect } from "react-router-dom";
 
-
 class CreateTripPage extends Component {
   constructor(props) {
     super(props);
@@ -12,7 +11,7 @@ class CreateTripPage extends Component {
       duration: "",
       city_id: "",
       created: false,
-      cities:[],
+      cities: [],
       redirectToNewPage: false
     };
 
@@ -44,19 +43,16 @@ class CreateTripPage extends Component {
         Accept: "application/json",
         "Content-type": "application/json"
       }
-    }).then(trip => trip.json())
-    .then(json =>{
-      console.log(json.trip_id)
-         this.setState({
-           created: true,
-           redirectToNewPage: true,
-           trip_id: json.trip_id
-         });
-    }
-
-
-    );
-
+    })
+      .then(trip => trip.json())
+      .then(json => {
+        console.log(json.trip_id);
+        this.setState({
+          created: true,
+          redirectToNewPage: true,
+          trip_id: json.trip_id
+        });
+      });
   }
 
   componentDidMount() {
@@ -70,48 +66,57 @@ class CreateTripPage extends Component {
   }
 
   render() {
+    <video id="background-video" loop autoPlay>
+      <source src="https://youtu.be/DGIXT7ce3vQ" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>;
     if (this.state.redirectToNewPage) {
       let id = this.state.trip_id;
-   return <Redirect to={`/trips/${id}.json`} />;
-      }
+      return <Redirect to={`/trips/${id}.json`} />;
+    }
     return (
-
       <div className="CreateTrip">
-      <header></header>
-      <div className="formBox">
+        <header />
+        <div className="formBox">
+          <h1>New Trip</h1>
+          <form onChange={this.onFormChange} onSubmit={this.onFormSubmit}>
+            <p>
+              <label for="budget">Budget:</label>
+              <input
+                type="number"
+                name="budget"
+                placeholder="$"
+                value={this.state.budget}
+              />
+            </p>
+            <p>
+              <label for="departure_date">Departing:</label>
+              <input type="date" name="departure_date" />
+            </p>
+            <p>
+              <label for="duration">Duration:</label>
+              <input type="number" name="duration" placeholder="3 days" />
+            </p>
+            <p>
+              <label for="name">Origin:</label>
+            </p>
+            <select name="city_id">
+              {this.state.cities.map((city, index) => {
+                return (
+                  <option key={index} value={city.city_id} name="city_id">
+                    {city.city_name}
+                  </option>
+                );
+              })}
+            </select>
+            {/* <input type="text" name="city_id" placeholder="BOS" /> */}
 
-        <h1>New Trip</h1>
-        <form onChange={this.onFormChange} onSubmit={this.onFormSubmit}>
-        <p>
-          <label for="budget">Budget:</label>
-          <input type="number" name="budget" placeholder="$" value={this.state.budget} />
-        </p>
-        <p>
-          <label for="departure_date">Departing:</label>
-          <input type="date" name="departure_date"/>
-        </p>
-        <p>
-          <label for="duration">Duration:</label>
-          <input type="number" name="duration" placeholder="3 days" />
-        </p>
-        <p>
-          <label for="name">Origin:</label>
-          </p>
-          <select name = 'city_id'>
-          { this.state.cities.map((city, index) => {
-            return <option key = {index} value = {city.city_id} name = 'city_id'>{city.city_name}</option>
-          })}
-          </select>
-          {/* <input type="text" name="city_id" placeholder="BOS" /> */}
-
-          <p>
-            <input type="submit" value="submit" />
-          </p>
-        </form>
-
+            <p>
+              <input type="submit" value="submit" />
+            </p>
+          </form>
         </div>
-
-        <footer>this is a footer</footer>
+        {/* <footer>HI THERE</footer> */}
       </div>
     );
   }
