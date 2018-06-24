@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
 import "./style.css";
 // import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
@@ -40,24 +42,33 @@ class Summarypage extends Component {
      }))
     console.log(this.state.budget) };
   render() {
-   return(
-      <div className = 'wrapper'>
+    return (
+        <div className="Summarypage">
         <header>
           <nav>HERE IS A NAV!</nav>
         </header>
+        <h2 id="head">Summary</h2>
         <div className="info-box">
           <div className="info">
-            <h2 id="head">Summary</h2>
             <img className="destination" src="https://cdn-image.travelandleisure.com/sites/default/files/styles/1600x1000/public/1508524504/paris-ROOFTOP1017.jpg?itok=arOAqg7r" />
 
-            <p>Destination: {this.state.destination}</p>
+            <p> Destination: {this.state.destination}</p>
             <p> Departure_date: 2018-06-29</p>
             <p> Return_date: 2018-07-04</p>
             <p> Price: 211.40</p>
+            <div className="buttons">
+              <button>
+                <Link to="/trips/edit">Edit</Link>
+              </button>
+              <button>
+                <Link to="/trip/delete">Delete</Link>
+              </button>
+            </div>
           </div>
           </div>
           </div>
+          )
+}
+}
 
-    ) }}
-
-    export default Summarypage
+export default Summarypage
