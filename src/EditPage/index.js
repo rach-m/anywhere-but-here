@@ -1,16 +1,18 @@
 import React, { Component } from "react";
 import "./style.css";
 import { Redirect } from "react-router-dom";
+import moment from 'moment';
 
-class CreateTripPage extends Component {
+class EditPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      trip_id: 0,
       budget: "",
       departure_date: "",
       duration: "",
       city_id: "",
-      created: false,
+      updated: false,
       cities: [],
       redirectToNewPage: false
     };
@@ -32,31 +34,27 @@ class CreateTripPage extends Component {
   //Handles the form when it is submitted and grabs the trip id for the redirect to single view page
   onFormSubmit(evt) {
     evt.preventDefault();
-    const newTrip = {
+    const updatedTrip = {
+      trip_id: this.state.trip_id,
       budget: this.state.budget,
       departure_date: this.state.departure_date,
       duration: this.state.duration,
       city_id: this.state.city_id
     };
-    fetch(`/trips`, {
-      method: "POST",
-      body: JSON.stringify(newTrip),
+
+    fetch(`/trips/${this.state.trip_id}/edit.json`, {
+      method: "PUT",
+      body: JSON.stringify(updatedTrip),
       headers: {
-        Accept: "application/json",
         "Content-type": "application/json"
       }
-    })
-      .then(trip => trip.json())
-      .then(json => {
-        console.log(json.trip_id);
-        this.setState({
-          created: true,
+    }).then(this.setState({
+          updated: true,
           redirectToNewPage: true,
           //Redirect to new page reset to true so code know the form submit has run
-          trip_id: json.trip_id
-        });
-      });
-  }
+        }));
+      };
+
 
   //Grabs all the cities for the dropdown cities list
   componentDidMount() {
@@ -65,8 +63,21 @@ class CreateTripPage extends Component {
       .then(cities => {
         this.setState({
           cities: cities
+        });
+        let id = this.props.match.params.id;
+        fetch(`/trips/${id}.json`)
+        .then(response => response.json()
+        .then(trip => {
+          this.setState({
+            trip_id: trip.trip_id,
+            budget: trip.budget,
+            departure_date: moment(trip.departure_date).format("YYYY-MM-DD"),
+            duration: trip.duration,
+            city_id: trip.city_id,
+            city_name: trip.city_name
+          })
         })
-      })
+      )});
   }
 
   render() {
@@ -77,7 +88,7 @@ class CreateTripPage extends Component {
     return (
       <div className="CreateTrip">
         <div className="formBox">
-          <h1>New Trip</h1>
+          <h1>Edit Trip</h1>
           <form onChange={this.onFormChange} onSubmit={this.onFormSubmit}>
             <p>
               <label for="budget">Budget:</label>
@@ -90,11 +101,11 @@ class CreateTripPage extends Component {
             </p>
             <p>
               <label for="departure_date">Departing:</label>
-              <input type="date" name="departure_date" />
+              <input type="date" name="departure_date" value = {this.state.departure_date} />
             </p>
             <p>
               <label for="duration">Duration:</label>
-              <input type="number" name="duration" placeholder="3 days" />
+              <input type="number" name="duration" placeholder="3 days" value = {this.state.duration} />
             </p>
             <p>
               <label for="name">Origin:</label>
@@ -102,8 +113,13 @@ class CreateTripPage extends Component {
             {/* Grabs all the cities and maps over them to create the options for the dropdown */}
             <select name="city_id">
               {this.state.cities.map((city, index) => {
+                if(this.state.city_name === city.city_name){
+                 return <option key={index} value={city.city_id} name="city_id" placeholder={this.state.city_name} selected>
+                    {city.city_name}
+                  </option>;
+                }
                 return (
-                  <option key={index} value={city.city_id} name="city_id">
+                  <option key={index} value={city.city_id} name="city_id" placeholder= {this.state.city_name}>
                     {city.city_name}
                   </option>
                 );
@@ -111,7 +127,7 @@ class CreateTripPage extends Component {
             </select>
 
             <p>
-              <input type="submit" value="SUBMIT" id = 'submit' />
+              <input type="submit" value="SUBMIT" id="submit" />
             </p>
           </form>
         </div>
@@ -119,4 +135,4 @@ class CreateTripPage extends Component {
     );
   }
 }
-export default CreateTripPage;
+export default EditPage;

@@ -12,16 +12,12 @@ Trip.all = () => {
   return db.any('SELECT * FROM trips');
 }
 
-Trip.find = id => {
-  return db.one("SELECT * FROM trips WHERE trip_id = $<id>", { id: id });
-};
-
 Trip.update = UpdateTrip => {
   return db.none(`UPDATE trips SET
     budget = $<budget>,
     departure_date = $<departure_date>,
     duration = $<duration>,
-    city_id = $<city_id>`, UpdateTrip);
+    city_id = $<city_id> WHERE trip_id = $<trip_id>`, UpdateTrip);
 };
 
 Trip.delete = id => {
