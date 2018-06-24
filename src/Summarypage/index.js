@@ -112,9 +112,14 @@ onButtonClick(evt) {
                   Edit
                 </button>
               </Link>
-              <Link to={`/trips/create`}>
-                <button type="button" onClick={this.onButtonClick}>
+              <Link to={`/trips`}>
+                <button type="button" value="DELETE" onClick={this.onButtonClick}>
                   Delete
+                </button>
+              </Link>
+              <Link to={`/trips`}>
+                <button type="button" value="All-Trips" onClick={this.onButtonClick}>
+                  All Trips
                 </button>
               </Link>
             </div>
