@@ -25,8 +25,7 @@ app.get("/cities.json", (request, response) => {
 //Used for the show previous trips page
 app.get("/trips.json", (request, response) => {
   Trip.all().then(data => {
-   response.json(data);
-
+  response.json(data);
   });
 });
 
