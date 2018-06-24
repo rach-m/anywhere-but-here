@@ -1,7 +1,12 @@
+.body{
+  margin: 0;
+  padding: 0;
+}
+
 .Summarypage{
   background: url("https://images.trvl-media.com/media/content/expus/graphics/launch/home/tvly/150324_flights-hero-image_1330x742.jpg");
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   height: 100vh;
   width: 100vw;
   text-align: center;
@@ -12,28 +17,10 @@
 
 h2{
   text-align: center;
-  font-size: 40px;
-}
-
-html{
-  overflow: hidden;
-  height: 100%;
-}
-
-header {
-  background: black;
-  height: 30px;
-  width: 100%;
-}
-
-footer{
-  position: fixed;
-  left: 0;
-  height: 40px;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
-  background:black;
+  font-size: 50px;
+  text-shadow: none;
+  font-family: 'Gravitas One';
+  padding-top: none;
 }
 
 buttons{
@@ -47,9 +34,6 @@ display:inline-block;
 position: absolute;
 }
 
-#head{
- margin-top: 10px;
-}
 .destination{
   height: 300px;
   width: 300px;
@@ -63,7 +47,7 @@ position: absolute;
   margin: 0 auto;
   margin-top: 40px;
   width: 50%;
-  height: 75%;
+  height: 90%;
   background: rgba(175, 175, 175, .5);
   border-radius: 20px;
   position: relative;
@@ -76,9 +60,7 @@ position: absolute;
   text-align: center;
   flex-direction: column;
   position: absolute;
-  padding: 20px;
-  margin-top: 40px;
+  /* margin-top: 40px; */
   margin-bottom: 30px;
   font-size: 20px;
-  padding: 5px;
 }

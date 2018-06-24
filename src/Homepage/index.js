@@ -7,9 +7,6 @@ class Homepage extends Component {
     return (
       <Router>
         <div className="Homepage">
-          <header>
-            <nav>HERE IS A NAV!</nav>
-          </header>
           <div className="flex-wrapper">
             <h1>Anywhere But Here</h1>
             <h2>Luxurious escapes for less</h2>
@@ -21,7 +18,6 @@ class Homepage extends Component {
               <Link to="/trips/previous">Previous Searches</Link>
             </button>
           </div>
-          <footer>this is a footer</footer>
         </div>
       </Router>
     );
