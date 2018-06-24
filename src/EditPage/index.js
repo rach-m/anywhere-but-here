@@ -7,6 +7,7 @@ class EditPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      trip_id: 0,
       budget: "",
       departure_date: "",
       duration: "",
@@ -34,6 +35,7 @@ class EditPage extends Component {
   onFormSubmit(evt) {
     evt.preventDefault();
     const updatedTrip = {
+      trip_id: this.state.trip_id,
       budget: this.state.budget,
       departure_date: this.state.departure_date,
       duration: this.state.duration,
