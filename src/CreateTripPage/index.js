@@ -61,8 +61,8 @@ class CreateTripPage extends Component {
       .then(cities => {
         this.setState({
           cities: cities
-        });
-      });
+        })
+      })
   }
 
   render() {
@@ -72,7 +72,6 @@ class CreateTripPage extends Component {
     }
     return (
       <div className="CreateTrip">
-        <header />
         <div className="formBox">
           <h1>New Trip</h1>
           <form onChange={this.onFormChange} onSubmit={this.onFormSubmit}>

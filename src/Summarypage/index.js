@@ -40,6 +40,8 @@ class Summarypage extends Component {
      }))
     console.log(this.state.budget) };
   render() {
+   return(
+      <div className = 'wrapper'>
         <header>
           <nav>HERE IS A NAV!</nav>
         </header>
@@ -54,3 +56,8 @@ class Summarypage extends Component {
             <p> Price: 211.40</p>
           </div>
           </div>
+          </div>
+
+    ) }}
+
+    export default Summarypage
