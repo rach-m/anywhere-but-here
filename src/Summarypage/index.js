@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
 import "./style.css";
 // import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
@@ -50,8 +52,7 @@ class Summarypage extends Component {
   }
 
   render() {
-    return (
-    <div className="Summarypage">
+    return <div className="Summarypage">
         <header>
           <nav>HERE IS A NAV!</nav>
         </header>
@@ -64,11 +65,18 @@ class Summarypage extends Component {
             <p> Departure_date: 2018-06-29</p>
             <p> Return_date: 2018-07-04</p>
             <p> Price: 211.40</p>
+            <div className="buttons">
+              <button>
+                <Link to="/trips/edit">Edit</Link>
+              </button>
+              <button>
+                <Link to="/trip/delete">Delete</Link>
+              </button>
+            </div>
           </div>
         </div>
         <footer>this is a footer</footer>
-      </div>
-    )
+      </div>;
   };
 }
 
