@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link, Redirect } from "react-router-dom";
 
 import "./style.css";
 // import { BrowserRouter as Router, Route, Link } from "react-router-dom";
@@ -73,6 +73,14 @@ class Summarypage extends Component {
       })
     );
   }
+onButtonClick(evt) {
+  evt.preventDefault();
+  let id = this.state.trip_id;
+  fetch(`trip/${id}/delete`).then(
+    console.log('deleted')
+  )
+}
+
 
   render() {
     return <div className="Summarypage">
@@ -102,8 +110,10 @@ class Summarypage extends Component {
                   Edit
                 </button>
               </Link>
-              <Link to={`/trip/${this.state.trip_id}/delete`}>
-                <button type = 'button'>Delete</button>
+              <Link to={`/trips/create`}>
+                <button type="button" onClick={this.onButtonClick}>
+                  Delete
+                </button>
               </Link>
             </div>
           </div>

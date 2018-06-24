@@ -62,20 +62,26 @@ app.post("/trips", (request, response) => {
 app.put("/trips/:id/edit.json", (request, response) => {
   let id = request.params.id;
   updatedTrip = {
+    trip_id: id,
     budget: request.body.budget,
     departure_date: request.body.departure_date,
     duration: request.body.duration,
     city_id: request.body.city_id
   };
   // console.log(newTrip)
-  Trip.update(updatedTrip).then(data => {
+  Trip.update(updatedTrip, id).then(data => {
     // console.log(newTrip)
     // console.log(data);
     response.json(data);
   });
 });
 
-
+app.post('/trips/:id/delete', (request, reponse) =>{
+  let id = request.params.id
+  Trip.delete(id).then(
+    console.log('deleted')
+  )
+})
 
 
 // In production, any request that doesn't match a previous route

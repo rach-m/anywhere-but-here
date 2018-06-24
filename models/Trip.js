@@ -17,7 +17,7 @@ Trip.update = UpdateTrip => {
     budget = $<budget>,
     departure_date = $<departure_date>,
     duration = $<duration>,
-    city_id = $<city_id>`, UpdateTrip);
+    city_id = $<city_id> WHERE trip_id = $<trip_id>`, UpdateTrip);
 };
 
 Trip.delete = id => {
