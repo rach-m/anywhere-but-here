@@ -16,9 +16,10 @@ app.use(jsonParser);
 app.get("/cities.json", (request, response) => {
   City.all().then(data => {
   response.json(data);
-
   });
 });
+
+
 app.get("/trips.json", (request, response) => {
   Trip.all().then(data => {
    response.json(data);

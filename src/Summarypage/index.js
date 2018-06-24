@@ -28,9 +28,38 @@ class Summarypage extends Component {
           }&departure_date=${date}&duration=${data.duration}&max_price=${
             data.budget
           }`
-        ).then(response => response.json()
-         .then(apiData => {
+        ).then(response =>
+          response.json().then(apiData => {
             console.log(apiData);
+            let randomNumber = Math.floor(
+              Math.random() * apiData.results.length
+            );
+            let destination = apiData.results[randomNumber].destination;
+            let departure_date = apiData.results[randomNumber].departure_date;
+            let return_date = apiData.results[randomNumber].return_date;
+            let price = Math.ceil(apiData.results[randomNumber].price);
+            // console.log(destination);
+            // console.log(departure_date);
+            // console.log(return_date);
+            // console.log(Math.ceil(price));
+            this.setState({
+              randomNumber,
+              destination,
+              departure_date,
+              return_date,
+              price
+            });
+            let code = this.state.destination;
+            fetch(`/cities.json`).then(response =>
+              response.json().then(cities => {
+                this.setState({
+                  cities : cities
+                })
+                cities.map(city =>{ if(city.city_code === this.state.destination){
+                  this.setState({destination: city.city_name})
+                }})
+              })
+            );
           })
         );
       })
@@ -47,10 +76,22 @@ class Summarypage extends Component {
               className="destination"
               src="https://cdn-image.travelandleisure.com/sites/default/files/styles/1600x1000/public/1508524504/paris-ROOFTOP1017.jpg?itok=arOAqg7r"
             />
-            <p> Destination: {this.state.destination}</p>
-            <p> Departure_date: {this.state.departure_date}</p>
-            <p> Return_date: 2018-07-04</p>
-            <p> Price: 211.40</p>
+            <p className="label">
+              {" "}
+              Destination: <span>{this.state.destination}</span>
+            </p>
+            <p className="label">
+              {" "}
+              Departure Date: <span>{this.state.departure_date}</span>
+            </p>
+            <p className="label">
+              {" "}
+              Return Date: <span>{this.state.return_date}</span>
+            </p>
+            <p className="label">
+              {" "}
+              Price: <span>${this.state.price}</span>
+            </p>
             <div className="buttons">
               <button>
                 <Link to="/trips/edit">Edit</Link>
