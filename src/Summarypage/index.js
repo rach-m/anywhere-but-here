@@ -10,7 +10,10 @@ class Summarypage extends Component {
       departure_date: '',
       duration: '',
       budget: '',
+<<<<<<< HEAD
+=======
       trip_id: '',
+>>>>>>> master
     };
   }
 

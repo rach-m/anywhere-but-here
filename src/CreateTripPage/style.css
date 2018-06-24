@@ -44,8 +44,15 @@ label {
 }
 
 
- header {
+  header {
   left: 0;
+<<<<<<< HEAD
+  background-color: black;
+  height: 30px;
+  width: 100%;
+} 
+ 
+=======
   background: black;
   height: 150px;
   width: 100%;
@@ -58,6 +65,7 @@ input{
   border: 1px rgb(317, 3, 140) solid;
   padding: 5px;
   font-size: 15px;
+>>>>>>> master
 
 }
 
