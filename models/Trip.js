@@ -28,4 +28,10 @@ Trip.delete = id => {
   return db.result("DELETE FROM trips WHERE trip_id = $<id>", { id: id });
 };
 
+Trip.join = (id) => {
+  return db.one(`SELECT * from trips
+  JOIN cities ON trips.city_id = cities.city_id
+  WHERE trip_id = $<id>`, {id:id})
+}
+
 module.exports = Trip;

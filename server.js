@@ -28,10 +28,11 @@ app.get("/trips.json", (request, response) => {
 
 app.get("/trips/:id.json", (request, response) => {
   id = request.params.id;
-  Trip.find(id).then(data => {
-    response.json(data);
-  });
-});
+  Trip.join(id).then(data => {
+    response.json(data)
+  })
+
+})
 
 
 
