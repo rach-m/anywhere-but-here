@@ -42,16 +42,11 @@ class Summarypage extends Component {
      }))
     console.log(this.state.budget) };
   render() {
-    return (
-        <div className="Summarypage">
-        <header>
-          <nav>HERE IS A NAV!</nav>
-        </header>
-        <h2 id="head">Summary</h2>
+    return <div className="Summarypage">
         <div className="info-box">
           <div className="info">
+            <h2>Your Trip:</h2>
             <img className="destination" src="https://cdn-image.travelandleisure.com/sites/default/files/styles/1600x1000/public/1508524504/paris-ROOFTOP1017.jpg?itok=arOAqg7r" />
-
             <p> Destination: {this.state.destination}</p>
             <p> Departure_date: 2018-06-29</p>
             <p> Return_date: 2018-07-04</p>
@@ -65,9 +60,8 @@ class Summarypage extends Component {
               </button>
             </div>
           </div>
-          </div>
-          </div>
-          )
+        </div>
+      </div>;
 }
 }
 

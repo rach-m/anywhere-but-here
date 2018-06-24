@@ -1,12 +1,16 @@
-.Homepage {margin: 0;
+body{
+margin: 0;
+}
+
+.Homepage {
 background-image:url('../media/train-2373323_1920.jpg');
 background-repeat: no-repeat;
-height: 150vh;
+height: 100vh;
 text-align: center;
 background-position: center;
 }
 
- header{
+ /* header{
 background: black;
 height: 150px;
 width: 100vw;
@@ -17,7 +21,7 @@ footer{
   height: 125px;
   width: 100vw;
   background:black;
-} 
+} */
 
 .flex-wrapper {
   height: 60vh;

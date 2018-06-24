@@ -107,7 +107,7 @@ class CreateTripPage extends Component {
             {/* <input type="text" name="city_id" placeholder="BOS" /> */}
 
             <p>
-              <input type="submit" value="submit" />
+              <input type="submit" value="SUBMIT" id = 'submit' />
             </p>
           </form>
         </div>
