@@ -55,17 +55,6 @@ class CreateTripPage extends Component {
       });
   }
 
-<<<<<<< HEAD
-  // componentDidMount() {
-  //   fetch("/cities.json")
-  //     .then(response => response.json())
-  //     .then(cities => {
-  //       this.setState({
-  //         cities: cities
-  //       });
-  //     });
-  // }
-=======
   componentDidMount() {
     fetch("/cities.json")
       .then(response => response.json())
@@ -75,7 +64,6 @@ class CreateTripPage extends Component {
         });
       });
   }
->>>>>>> master
 
   render() {
     <video id="background-video" loop autoPlay>
@@ -88,41 +76,6 @@ class CreateTripPage extends Component {
     }
     return (
       <div className="CreateTrip">
-<<<<<<< HEAD
-      <header>head</header>
-      <div className="formBox">
-
-        <h1>New Trip</h1>
-        <form onChange={this.onFormChange} onSubmit={this.onFormSubmit}>
-        <p>
-          <label for="budget">Budget:</label>
-          <input type="number" name="budget" placeholder="$" value={this.state.budget} />
-        </p>  
-        <p>
-          <label for="departure_date">Departing:</label>
-          <input type="date" name="departure_date"/>
-        </p>
-        <p>
-          <label for="duration">Duration:</label>
-          <input type="number" name="duration" placeholder="3 days" />
-        </p>
-        <p>
-          <label for="name">Origin:</label>
-          </p>
-          <select name = 'city_id'>
-           { this.state.cities.map((city, index) => {
-             return <option key = {index} value = {city.city_id} name = 'city_id'>{city.city_name}</option>
-           })}
-          </select>
-          {/* <input type="text" name="city_id" placeholder="BOS" /> */}
-
-          <p>
-            <input type="submit" value="submit" />
-          </p>
-        </form>
-      </div>
-      <footer></footer>
-=======
         <header />
         <div className="formBox">
           <h1>New Trip</h1>
@@ -164,7 +117,6 @@ class CreateTripPage extends Component {
           </form>
         </div>
         {/* <footer>HI THERE</footer> */}
->>>>>>> master
       </div>
     );
   }
