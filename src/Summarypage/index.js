@@ -103,7 +103,7 @@ class Summarypage extends Component {
                 </button>
               </Link>
               <Link to={`/trip/${this.state.trip_id}/delete`}>
-                <button>Delete</button>
+                <button type = 'button'>Delete</button>
               </Link>
             </div>
           </div>
