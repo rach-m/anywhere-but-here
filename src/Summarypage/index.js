@@ -21,7 +21,7 @@ class Summarypage extends Component {
   //city codes into actual city names
 
   componentDidMount() {
-    let id = this.props.match.params.id;
+    let id = this.props.trip_id;
     fetch(`/trips/${id}.json`).then(json =>
       json.json().then(data => {
         console.log(data);
@@ -73,6 +73,8 @@ class Summarypage extends Component {
       })
     );
   }
+
+
 onButtonClick(evt) {
   evt.preventDefault();
   let id = this.state.trip_id;
@@ -89,19 +91,15 @@ onButtonClick(evt) {
             <h2>Your Trip:</h2>
             <img className="destination" src="https://cdn-image.travelandleisure.com/sites/default/files/styles/1600x1000/public/1508524504/paris-ROOFTOP1017.jpg?itok=arOAqg7r" />
             <p className="label">
-              {" "}
               Destination: <span>{this.state.destination}</span>
             </p>
             <p className="label">
-              {" "}
               Departure Date: <span>{this.state.departure_date}</span>
             </p>
             <p className="label">
-              {" "}
               Return Date: <span>{this.state.return_date}</span>
             </p>
             <p className="label">
-              {" "}
               Price: <span>${this.state.price}</span>
             </p>
             <div className="buttons">
@@ -110,13 +108,13 @@ onButtonClick(evt) {
                   Edit
                 </button>
               </Link>
-              <Link to={`/trips`}>
-                <button type="button" value="DELETE" onClick={this.onButtonClick}>
+              <Link to={`/trips/${this.state.trip_id}/delete`}>
+                <button type="button" onClick={this.onButtonClick}>
                   Delete
                 </button>
               </Link>
               <Link to={`/trips`}>
-                <button type="button" value="All-Trips" onClick={this.onButtonClick}>
+                <button type="button" value="All-Trips">
                   All Trips
                 </button>
               </Link>
