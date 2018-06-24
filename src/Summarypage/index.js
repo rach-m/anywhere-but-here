@@ -73,6 +73,8 @@ class Summarypage extends Component {
       })
     );
   }
+
+  
 onButtonClick(evt) {
   evt.preventDefault();
   let id = this.state.trip_id;
