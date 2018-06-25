@@ -24,6 +24,7 @@ text-align: center;
   font-family: 'Open Sans';
   background:rgba(100, 200, 300, .5);
   margin: 5px 30px;
+  /* border: 2px solid black; */
   border-radius: 10px;
 
 }
@@ -42,6 +43,70 @@ span{
   color: black
 }
 
+.fa {
+  padding: 15px;
+  font-size: 22px;
+  height: 15px;
+  width:15px;
+  text-align: center;
+  text-decoration: none;
+  border: 1px solid #40e0d0;
+  border-radius: 40px;
+  position: relative;
+  float:right ;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-instagram {
+  
+  color: #fff;
+  background: #d6249f;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, .25);
+}
+
+.fa-linkedin-square {
+font-size:24px;
+background-color: blue;
+color: white;
+
+}
+
+.fa:hover {
+  opacity: 0.7;
+}
+
+
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0px;
+  overflow: hidden;
+  background:rgba(100, 100, 100, .4);
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+
+li a:hover {
+  background-color: turquoise;
+}
 .label{
     color:rgb(0,20,100);
  text-shadow: none;

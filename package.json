@@ -15,9 +15,11 @@
     "pg-promise": "^8.4.4",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
+    "react-moment": "^0.7.7",
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.4",
-    "react-sound": "^1.2.0"
+    "react-sound": "^1.2.0",
+    "save": "^2.3.2"
   },
   "scripts": {
     "start": "concurrently --names \"React,Express\" --prefix-colors \"green,blue\" \"react-scripts start\" \"nodemon server\"",
