@@ -13,41 +13,58 @@
   justify-content: center;
   max-width: 1000px;
   display: grid;
-  margin: 50px auto;
+  margin: 30px auto;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 200px);
+  grid-template-rows: 100px 25px 100px;
   grid-column-gap: 15px;
   grid-row-gap: 100px;
   grid-template-areas:
  "l m n"
- "a b c";
-
+ "a b c"
+ "d e f";
 }
 
-.box1 {
+.box1 p {
   grid-area: a;
-  border: 1px solid turquoise;
-  text-align: center;
+  height: 25px;
   color: turquoise;
 }
 
-
-.box2 {
+.box2 p {
   grid-area: b;
-  border: 1px solid turquoise;
-  text-align: center;
+  height: 25px;
   color: turquoise;
 }
 
-.box3 {
+.box3 p {
   grid-area: c;
+  height: 25px;
+  color: turquoise;
+}
+.box4 {
+  grid-area: d;
   border: 1px solid turquoise;
   text-align: center;
   color: turquoise;
 }
 
+.box5 {
+  grid-area: e;
+  border: 1px solid turquoise;
+  text-align: center;
+  color: turquoise;
+}
 
+.box6 {
+  grid-area: f;
+  border: 1px solid turquoise;
+  text-align: center;
+  color: turquoise;
+}
 
+.firstlast {
+  color: turquoise;
+}
 
 .rachel{
   grid-area: l;
