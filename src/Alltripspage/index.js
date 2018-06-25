@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Summarypage from "../Summarypage";
 import "./style.css";
-import moment from 'moment'
+import moment from 'moment';
 
 class Alltripspage extends Component {
   constructor(props) {

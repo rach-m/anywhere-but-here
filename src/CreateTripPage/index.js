@@ -65,8 +65,8 @@ class CreateTripPage extends Component {
       .then(cities => {
         this.setState({
           cities: cities
-        })
-      })
+        });
+      });
   }
 
   render() {
@@ -74,14 +74,19 @@ class CreateTripPage extends Component {
       let id = this.state.trip_id;
       return <Redirect to={`/trips/${id}.json`} />;
     }
-    return <div className="CreateTrip">
-
+    return (
+      <div className="CreateTrip">
         <div className="formBox">
           <h1>New Trip</h1>
           <form onChange={this.onFormChange} onSubmit={this.onFormSubmit}>
             <p>
               <label for="budget">Budget:</label>
-              <input type="number" name="budget" placeholder="$Amount" value={this.state.budget} />
+              <input
+                type="number"
+                name="budget"
+                placeholder="$500"
+                value={this.state.budget}
+              />
             </p>
             <p>
               <label for="departure_date">Departing:</label>
@@ -97,17 +102,21 @@ class CreateTripPage extends Component {
             {/* Grabs all the cities and maps over them to create the options for the dropdown */}
             <select name="city_id">
               {this.state.cities.map((city, index) => {
-                return <option key={index} value={city.city_id} name="city_id">
+                return (
+                  <option key={index} value={city.city_id} name="city_id">
                     {city.city_name}
-                  </option>;
+                  </option>
+                );
               })}
             </select>
+
             <p>
               <input type="submit" value="SUBMIT" id="submit" />
             </p>
           </form>
         </div>
-      </div>;
+      </div>
+    );
   }
 }
 export default CreateTripPage;

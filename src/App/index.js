@@ -7,33 +7,11 @@ import EditPage from "../EditPage";
 import Alltripspage from "../Alltripspage";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-const NavigationBar = ({ visible }) => (
-  <div id="navbar" className={visible ? "slideIn" : "slideOut"}>
-    Hello
-  </div>
-);
-
-
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.handleClick = this.handleClick.bind(this);
-    this.state = { visible: false };
-  }
 
-  handleClick() {
-    this.setState(prev => ({ visible: !prev.visible }));
-  }
   render() {
     return <div>
-        <div id="App">
-          <button type="button" onClick={this.handleClick}>
-            {this.state.visible ? "Hide navbar" : "Show navbar"}
-          </button>
-          <hr />
-          <NavigationBar visible={this.state.visible} />
-        </div>
         <Router>
           <div>
             <Route path="/" exact component={Homepage} />

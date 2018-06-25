@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./style.css";
 import { Redirect } from "react-router-dom";
-import moment from 'moment';
+import moment from "moment";
 
 class EditPage extends Component {
   constructor(props) {
@@ -48,13 +48,14 @@ class EditPage extends Component {
       headers: {
         "Content-type": "application/json"
       }
-    }).then(this.setState({
-          updated: true,
-          redirectToNewPage: true,
-          //Redirect to new page reset to true so code know the form submit has run
-        }));
-      };
-
+    }).then(
+      this.setState({
+        updated: true,
+        redirectToNewPage: true
+        //Redirect to new page reset to true so code know the form submit has run
+      })
+    );
+  }
 
   //Grabs all the cities for the dropdown cities list
   componentDidMount() {
@@ -65,19 +66,19 @@ class EditPage extends Component {
           cities: cities
         });
         let id = this.props.match.params.id;
-        fetch(`/trips/${id}.json`)
-        .then(response => response.json()
-        .then(trip => {
-          this.setState({
-            trip_id: trip.trip_id,
-            budget: trip.budget,
-            departure_date: moment(trip.departure_date).format("YYYY-MM-DD"),
-            duration: trip.duration,
-            city_id: trip.city_id,
-            city_name: trip.city_name
+        fetch(`/trips/${id}.json`).then(response =>
+          response.json().then(trip => {
+            this.setState({
+              trip_id: trip.trip_id,
+              budget: trip.budget,
+              departure_date: moment(trip.departure_date).format("YYYY-MM-DD"),
+              duration: trip.duration,
+              city_id: trip.city_id,
+              city_name: trip.city_name
+            });
           })
-        })
-      )});
+        );
+      });
   }
 
   render() {
@@ -101,11 +102,20 @@ class EditPage extends Component {
             </p>
             <p>
               <label for="departure_date">Departing:</label>
-              <input type="date" name="departure_date" value = {this.state.departure_date} />
+              <input
+                type="date"
+                name="departure_date"
+                value={this.state.departure_date}
+              />
             </p>
             <p>
               <label for="duration">Duration:</label>
-              <input type="number" name="duration" placeholder="3 days" value = {this.state.duration} />
+              <input
+                type="number"
+                name="duration"
+                placeholder="3 days"
+                value={this.state.duration}
+              />
             </p>
             <p>
               <label for="name">Origin:</label>
@@ -113,13 +123,26 @@ class EditPage extends Component {
             {/* Grabs all the cities and maps over them to create the options for the dropdown */}
             <select name="city_id">
               {this.state.cities.map((city, index) => {
-                if(this.state.city_name === city.city_name){
-                 return <option key={index} value={city.city_id} name="city_id" placeholder={this.state.city_name} selected>
-                    {city.city_name}
-                  </option>;
+                if (this.state.city_name === city.city_name) {
+                  return (
+                    <option
+                      key={index}
+                      value={city.city_id}
+                      name="city_id"
+                      placeholder={this.state.city_name}
+                      selected
+                    >
+                      {city.city_name}
+                    </option>
+                  );
                 }
                 return (
-                  <option key={index} value={city.city_id} name="city_id" placeholder= {this.state.city_name}>
+                  <option
+                    key={index}
+                    value={city.city_id}
+                    name="city_id"
+                    placeholder={this.state.city_name}
+                  >
                     {city.city_name}
                   </option>
                 );
