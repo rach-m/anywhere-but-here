@@ -21,7 +21,7 @@ class Summarypage extends Component {
   //city codes into actual city names
 
   componentDidMount() {
-    let id = this.props.trip_id;
+    let id = this.props.match.params.id;
     fetch(`/trips/${id}.json`).then(json =>
       json.json().then(data => {
         console.log(data);
@@ -63,7 +63,7 @@ class Summarypage extends Component {
                   });
                   cities.map(city => {
                     if (city.city_code === this.state.destination) {
-                      this.setState({ destination: city.city_name });
+                      return this.setState({ destination: city.city_name });
                     }
                   });
                 })
