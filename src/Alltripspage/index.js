@@ -98,7 +98,6 @@ class Alltripspage extends Component {
           })}
         </div>
       </div>
-    );
   }
 }
 

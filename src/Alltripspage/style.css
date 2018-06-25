@@ -3,7 +3,7 @@ body{
   padding: 0;
 }
 .background{
-  background:url('https://engineering.illinois.edu/images/water-banner.jpg');
+  background:url('http://diarioveaonline.com/wp-content/uploads/2018/06/awesome-hd-wallpapers-for-desktop-windows-8-46.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
@@ -31,10 +31,10 @@ h1{
   font-size: 45px;
   text-shadow: none;
   padding: 85px 0;
-  color: #121212;
+  color:whitesmoke;
 }
 span{
-  color: black
+  color: lemonchiffon
 }
 
 .fa {
@@ -66,7 +66,7 @@ span{
 .fa-linkedin-square {
 font-size:24px;
 background-color: blue;
-color: white;
+color: lemonchiffon;
 
 }
 
@@ -101,9 +101,10 @@ li a {
 li a:hover {
   background-color: turquoise;
 }
+
 .label{
-    color:rgb(0,20,100);
- text-shadow: none;
+  color: coral;
+  text-shadow: none;
   font-size: 20px;
   padding:6px;
   font-family: 'Open Sans' san-serif;
