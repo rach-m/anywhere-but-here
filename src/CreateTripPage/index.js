@@ -65,8 +65,8 @@ class CreateTripPage extends Component {
       .then(cities => {
         this.setState({
           cities: cities
-        })
-      })
+        });
+      });
   }
 
   render() {
@@ -111,7 +111,7 @@ class CreateTripPage extends Component {
             </select>
 
             <p>
-              <input type="submit" value="SUBMIT" id = 'submit' />
+              <input type="submit" value="SUBMIT" id="submit" />
             </p>
           </form>
         </div>
