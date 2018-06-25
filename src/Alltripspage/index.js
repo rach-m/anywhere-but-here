@@ -61,9 +61,9 @@ class Alltripspage extends Component {
         <li><a href="contact.asp">Contact</a></li>
         <li><a href="http://localhost:3000/trips">Trips</a></li>
         <a href="https://www.facebook.com/groups/538776059826617/about/" className="fa fa-facebook"></a>
-        <a href="https://www.instagram.com/generalassembly/" className="fa fa-instagram"></a>
+        <a href="https://www.instagram.com/ramodesigns/" className="fa fa-instagram"></a>
       </ul>
-      
+
 
         <h1>All Previous Searches</h1>
         <div className="Alltripspage">
