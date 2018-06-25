@@ -59,11 +59,11 @@ class Alltripspage extends Component {
   render() {
     return <div className = 'background'>
       <div className="navBar">
-        <ul>
-          <li><a href="http://localhost:3000/">Home</a></li>
-          <li><a href="http://localhost:3000/trips/create">New</a></li>
-          <li><a href="contact.asp">Contact</a></li>
-          <li><a href="http://localhost:3000/trips">Trips</a></li>
+      <ul>
+        <li><Link to="/">Home</Link></li>
+        <li> <Link to="/trips/create">New</Link></li>
+        <li> <Link to="/contact">Contact</Link></li>
+        <li> <Link to="/trips">Trips</Link></li>
           <a href="https://www.facebook.com/groups/538776059826617/about/" className="fa fa-facebook"></a>
           <a href="https://www.instagram.com/generalassembly/" className="fa fa-instagram"></a>
         </ul>

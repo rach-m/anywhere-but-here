@@ -5,6 +5,7 @@ import CreateTripPage from "../CreateTripPage";
 import Summarypage from "../Summarypage";
 import EditPage from "../EditPage";
 import Alltripspage from "../Alltripspage";
+import Contact from "../Contact";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 
@@ -19,6 +20,7 @@ class App extends Component {
             <Route path="/trips/:id.json" exact component={Summarypage} />
             <Route path="/trips/:id/edit" exact component={EditPage} />
             <Route path="/trips" exact component={Alltripspage} />
+            <Route path="/contact" exact component={Contact} />
           </div>
         </Router>
       </div>;

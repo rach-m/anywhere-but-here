@@ -87,7 +87,17 @@ class Summarypage extends Component {
 
   render() {
     return (
+      <div className="navBar">
+        <ul>
+          <li><Link to="/">Home</Link></li>
+          <li> <Link to="/trips/create">New</Link></li>
+          <li> <Link to="/contact">Contact</Link></li>
+          <li> <Link to="/trips">Trips</Link></li>
+          <a href="https://www.facebook.com/groups/538776059826617/about/" className="fa fa-facebook"></a>
+          <a href="https://www.instagram.com/generalassembly/" className="fa fa-instagram"></a>
+        </ul>
       <div className="Summarypage">
+   
         <div className="info-box">
           <div className="info">
             <h2>Your Trip:</h2>
@@ -126,6 +136,7 @@ class Summarypage extends Component {
             </div>
           </div>
         </div>
+      </div>
       </div>
     );
   }

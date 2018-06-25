@@ -1,0 +1,75 @@
+.container {
+  height: 100%;
+  padding: 0 25px 25px 25px;
+  display: grid;
+  display: flex;
+  justify-content: center;
+  background-color: black;
+  
+}
+
+.grid {
+  display: flex;
+  justify-content: center;
+  max-width: 1000px;
+  display: grid;
+  margin: 50px auto;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 200px);
+  grid-column-gap: 15px;
+  grid-row-gap: 100px;
+  grid-template-areas:
+ "l m n"
+ "a b c";
+
+}
+
+.box1 {
+  grid-area: a;
+  border: 1px solid turquoise;
+  text-align: center;
+  color: turquoise;
+}
+
+
+.box2 {
+  grid-area: b;
+  border: 1px solid turquoise;
+  text-align: center;
+  color: turquoise;
+}
+
+.box3 {
+  grid-area: c;
+  border: 1px solid turquoise;
+  text-align: center;
+  color: turquoise;
+}
+
+
+
+
+.rachel{
+  grid-area: l;
+  width: 188px;
+  height: 188px;
+  margin-bottom: 25px;
+  text-align: center;
+} 
+.john {
+  grid-area: m;
+  width: 188px;
+  margin-bottom: 25px;
+  text-align: center;
+} 
+.alvin{
+grid-area: n;
+width: 188px;
+ margin-bottom: 25px;
+text-align: center;
+}
+
+.travel {
+  color:turquoise;
+  background-color: black;
+}
