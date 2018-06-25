@@ -38,10 +38,10 @@ font-size: 15px;
 }
 
 .destination{
-  height: 300px;
-  width: 300px;
-  border-radius: 20px;
+  height: 120px;
+  padding: 0;
 }
+
 .info-box{
   display: flex;
   align-items: center;
@@ -83,4 +83,34 @@ span{
   color: black;
   text-shadow: none;
 font-size: 15px;
+}
+
+
+@media screen and (max-width: 700px ){
+  h2{
+    font-size: 20px;
+  }
+
+  .destination{
+    height: 50px;
+  }
+
+  label{
+    font-size: 10px;
+    padding: none;
+
+  }
+  span{
+    font-size: 10px;
+  }
+p{
+  margin: 0 auto;
+}
+
+button{
+  margin-top: 20px;
+  font-size: 10px;
+  padding: 5px;
+  border-radius: 3px;
+}
 }

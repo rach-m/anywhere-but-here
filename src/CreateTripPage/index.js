@@ -84,7 +84,7 @@ class CreateTripPage extends Component {
               <input
                 type="number"
                 name="budget"
-                placeholder="$500"
+                placeholder="$100"
                 value={this.state.budget}
               />
             </p>
