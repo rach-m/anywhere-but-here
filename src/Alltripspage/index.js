@@ -1,17 +1,22 @@
 import React, { Component } from "react";
 import Summarypage from "../Summarypage";
-import "./style.css";
-import moment from 'moment'
 import {
+  BrowserRouter as Router,
+  Route,
   Link,
+  Redirect
 } from "react-router-dom";
+import "./style.css";
+import moment from "moment";
 
 class Alltripspage extends Component {
   constructor(props) {
     super(props);
     this.state = {
       trips: [],
-      cities: []
+      cities: [],
+
+      redirectToNewPage: false
     };
   };
 
@@ -36,22 +41,20 @@ class Alltripspage extends Component {
 
   componentDidMount() {
     fetch("/trips")
-      .then(response => response.json() )
+      .then(response => response.json())
       .then(trips => {
         this.setState({
           trips: trips
-        })
-        fetch('/cities.json').then(
-          response => response.json()).then(
-            cities => {
-              this.setState({
-                cities: cities
-              })
-            }
-          )
-       })
-      }
-
+        });
+        fetch("/cities.json")
+          .then(response => response.json())
+          .then(cities => {
+            this.setState({
+              cities: cities
+            });
+          });
+      });
+  }
 
   render() {
     return <div className = 'background'>
@@ -96,7 +99,7 @@ class Alltripspage extends Component {
 
           })}
         </div>
-      </div>;
+      </div>
   }
 }
 

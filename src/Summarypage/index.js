@@ -96,11 +96,15 @@ class Summarypage extends Component {
   }
 
   render() {
-    return <div className="Summarypage">
+    return (
+      <div className="Summarypage">
         <div className="info-box">
           <div className="info">
             <h2>Your Trip:</h2>
-            <img className="destination" src="https://travel.state.gov/content/dam/passports/passport-images/passport%20book.png" />
+            <img
+              className="destination"
+              src="https://cdn-image.travelandleisure.com/sites/default/files/styles/1600x1000/public/1508524504/paris-ROOFTOP1017.jpg?itok=arOAqg7r"
+            />
             <p className="label">
               Destination: <span>{this.state.destination}</span>
             </p>
@@ -132,7 +136,8 @@ class Summarypage extends Component {
             </div>
           </div>
         </div>
-      </div>;
+      </div>
+    );
   }
 }
 
