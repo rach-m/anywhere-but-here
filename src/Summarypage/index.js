@@ -21,7 +21,7 @@ class Summarypage extends Component {
   //city codes into actual city names
 
   componentDidMount() {
-    let id = this.props.trip_id;
+    let id = this.props.match.params.id;
     fetch(`/trips/${id}.json`).then(json =>
       json.json().then(data => {
         console.log(data);

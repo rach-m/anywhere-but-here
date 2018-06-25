@@ -43,7 +43,6 @@ span{
 }
 
 .fa {
-  display: inline-flex;
   padding: 15px;
   font-size: 22px;
   height: 15px;
@@ -52,6 +51,8 @@ span{
   text-decoration: none;
   border: 1px solid #40e0d0;
   border-radius: 40px;
+  position: relative;
+  float:right ;
 }
 
 .fa-facebook {
@@ -67,7 +68,41 @@ span{
   box-shadow: 0px 3px 10px rgba(0, 0, 0, .25);
 }
 
+.fa-linkedin-square {
+font-size:24px;
+background-color: blue;
+color: white;
+
+}
+
 .fa:hover {
   opacity: 0.7;
 }
 
+
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0px;
+  overflow: hidden;
+  background:rgba(100, 100, 100, .4);
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+
+li a:hover {
+  background-color: #111;
+}
