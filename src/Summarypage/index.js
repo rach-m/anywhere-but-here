@@ -63,7 +63,7 @@ class Summarypage extends Component {
                   });
                   cities.map(city => {
                     if (city.city_code === this.state.destination) {
-                      this.setState({ destination: city.city_name });
+                      return this.setState({ destination: city.city_name });
                     }
                   });
                 })
