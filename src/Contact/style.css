@@ -5,12 +5,12 @@
   display: flex;
   justify-content: center;
   background-color: black;
-  
+
 }
 
 .grid {
   display: flex;
-  justify-content: center;
+  justify-items: center;
   max-width: 1000px;
   display: grid;
   margin: 30px auto;
@@ -22,6 +22,21 @@
  "l m n"
  "a b c"
  "d e f";
+}
+p{
+  font-size: 20px;
+
+  margin-top: 0;
+  /* padding: 0 25px; */
+}
+
+a{
+  font-family: 'Open Sans';
+  margin-bottom: 0;
+}
+
+a:hover{
+  color: gray
 }
 
 .box1 p {
@@ -43,27 +58,35 @@
 }
 .box4 {
   grid-area: d;
-  border: 1px solid turquoise;
+   border-right: 1px solid turquoise;
   text-align: center;
   color: turquoise;
+  height: 400px;
+  padding: 0 35px;
 }
 
 .box5 {
   grid-area: e;
-  border: 1px solid turquoise;
+   border-left: 1px solid turquoise;
+   border-right: 1px solid turquoise;
   text-align: center;
   color: turquoise;
+  height: 400px;
+  padding: 0 35px;
 }
 
 .box6 {
   grid-area: f;
-  border: 1px solid turquoise;
+  border-left: 1px solid turquoise;
   text-align: center;
   color: turquoise;
+  height: 400px;
+  padding: 0 35px;
 }
 
 .firstlast {
   color: turquoise;
+ text-align: center;
 }
 
 .rachel{
@@ -72,13 +95,14 @@
   height: 188px;
   margin-bottom: 25px;
   text-align: center;
-} 
+
+}
 .john {
   grid-area: m;
   width: 188px;
   margin-bottom: 25px;
   text-align: center;
-} 
+}
 .alvin{
 grid-area: n;
 width: 188px;
@@ -89,4 +113,14 @@ text-align: center;
 .travel {
   color:turquoise;
   background-color: black;
+}
+
+h2{
+  color: turquoise;
+  font-size: 25px;
+  font-family: 'Open Sans'
+}
+
+h1{
+  padding-bottom: 0;
 }
