@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./style.css";
 import { Redirect } from "react-router-dom";
 import moment from "moment";
+import {moment_run} from './momentHelper'
 
 class EditPage extends Component {
   constructor(props) {
@@ -71,7 +72,7 @@ class EditPage extends Component {
             this.setState({
               trip_id: trip.trip_id,
               budget: trip.budget,
-              departure_date: moment(trip.departure_date).format("YYYY-MM-DD"),
+              departure_date: moment_run(trip.departure_date),
               duration: trip.duration,
               city_id: trip.city_id,
               city_name: trip.city_name
@@ -81,14 +82,16 @@ class EditPage extends Component {
       });
   }
 
+
   render() {
     if (this.state.redirectToNewPage) {
       let id = this.state.trip_id;
       return <Redirect to={`/trips/${id}.json`} />;
     }
+
     return (
       <div className="CreateTrip">
-        
+
         <div className="formBox">
           <h1>Edit Trip</h1>
           <form onChange={this.onFormChange} onSubmit={this.onFormSubmit}>
@@ -156,7 +159,7 @@ class EditPage extends Component {
           </form>
         </div>
       </div>
-      
+
     );
   }
 }
