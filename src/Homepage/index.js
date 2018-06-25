@@ -22,7 +22,7 @@ class Homepage extends Component {
             <Link to="/trips/create">
               <button type = 'button'>Plan Your Escape</button>
             </Link>
-            <Link to="/trips/previous">
+            <Link to="/trips">
               <button type = 'button'>Previous Searches</button>
             </Link>
           </div>

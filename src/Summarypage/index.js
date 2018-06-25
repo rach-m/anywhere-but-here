@@ -1,5 +1,10 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Link, Redirect } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Redirect
+} from "react-router-dom";
 
 import "./style.css";
 // import { BrowserRouter as Router, Route, Link } from "react-router-dom";
@@ -74,22 +79,22 @@ class Summarypage extends Component {
     );
   }
 
-
-onButtonClick(evt) {
-  evt.preventDefault();
-  let id = this.state.trip_id;
-  fetch(`trip/${id}/delete`).then(
-    console.log('deleted')
-  )
-}
-
+  onButtonClick(evt) {
+    evt.preventDefault();
+    let id = this.state.trip_id;
+    fetch(`trip/${id}/delete`).then(console.log("deleted"));
+  }
 
   render() {
-    return <div className="Summarypage">
+    return (
+      <div className="Summarypage">
         <div className="info-box">
           <div className="info">
             <h2>Your Trip:</h2>
-            <img className="destination" src="https://cdn-image.travelandleisure.com/sites/default/files/styles/1600x1000/public/1508524504/paris-ROOFTOP1017.jpg?itok=arOAqg7r" />
+            <img
+              className="destination"
+              src="https://cdn-image.travelandleisure.com/sites/default/files/styles/1600x1000/public/1508524504/paris-ROOFTOP1017.jpg?itok=arOAqg7r"
+            />
             <p className="label">
               Destination: <span>{this.state.destination}</span>
             </p>
@@ -121,7 +126,8 @@ onButtonClick(evt) {
             </div>
           </div>
         </div>
-      </div>;
+      </div>
+    );
   }
 }
 
