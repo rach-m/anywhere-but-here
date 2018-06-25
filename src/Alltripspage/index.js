@@ -48,7 +48,7 @@ class Alltripspage extends Component {
                   </span>
                 </p>
                 <p className="label">
-                  Duration: <span>{trip.duration}Days</span>
+                  Duration: <span>{trip.duration} Days</span>
                 </p>
                 {this.state.cities.map(city => {
                   if (city.city_id === trip.city_id) {

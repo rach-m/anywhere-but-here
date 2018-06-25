@@ -22,8 +22,9 @@ text-align: center;
 
   color: white;
   font-family: 'Open Sans';
-  background:rgba(100, 100, 100, .4);
+  background:rgba(100, 200, 300, .5);
   margin: 5px 30px;
+  border-radius: 10px;
 
 }
 
@@ -40,3 +41,14 @@ h1{
 span{
   color: black
 }
+
+.label{
+    color:rgb(0,20,100);
+ text-shadow: none;
+  font-size: 20px;
+  padding:6px;
+  font-family: 'Open Sans' san-serif;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
