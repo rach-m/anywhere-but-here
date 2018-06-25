@@ -10,6 +10,7 @@
     "express": "^4.16.3",
     "jest": "^23.2.0",
     "moment": "^2.22.2",
+    "node": "^10.3.0",
     "nodemon": "^1.17.5",
     "npm": "^6.1.0",
     "pg-monitor": "^1.0.0",
@@ -27,7 +28,7 @@
     "start": "concurrently --names \"React,Express\" --prefix-colors \"green,blue\" \"react-scripts start\" \"nodemon server\"",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
   },
   "devDependencies": {
     "jest": "^23.2.0"
