@@ -1,11 +1,12 @@
 body{
   margin: 0;
   padding: 0;
+  background: black;
 }
 .background{
   background:url('http://diarioveaonline.com/wp-content/uploads/2018/06/awesome-hd-wallpapers-for-desktop-windows-8-46.jpg');
   background-size: cover;
-  background-repeat: no-repeat;
+  /* background-repeat: no-repeat; */
   height: 100vh;
   width: 100vw;
 }
@@ -51,10 +52,18 @@ span{
   float:right ;
 }
 
+.fa-instagram:before  {
+  text-align: center;
+  margin-right: 100px;
+}
+
 .fa-facebook {
   font-size: 30px;
   border: none;
   color: white;
+   border: none;
+   font-size: 30px;
+   margin: 0 15px;
 }
 
 .fa-instagram {
@@ -65,8 +74,9 @@ span{
 
 .fa-linkedin-square {
 font-size:24px;
-background-color: blue;
-color: lemonchiffon;
+/* background-color: blue; */
+color: white;
+border: none;
 
 }
 

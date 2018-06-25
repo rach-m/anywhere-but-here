@@ -70,7 +70,8 @@ class Alltripspage extends Component {
         <h1>All Previous Searches</h1>
         <div className="Alltripspage">
           {this.state.trips.map(trip => {
-                        return <div className="singleTrip">
+
+            return <div className="singleTrip">
                 <Link to={`/trips/${trip.trip_id}.json`}>
                   <p className="label">
                     Budget: <span>${trip.budget}</span>
@@ -94,6 +95,7 @@ class Alltripspage extends Component {
                   })}
                 </Link>
               </div>;
+
           })}
         </div>
       </div>
