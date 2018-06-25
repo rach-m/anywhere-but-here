@@ -81,7 +81,7 @@ class Summarypage extends Component {
 
   onButtonClick(evt) {
     evt.preventDefault();
-    let id = this.state.trip_id;
+    let id = this.props.match.params.id;
     fetch(`trip/${id}/delete`).then(console.log("deleted"));
   }
 

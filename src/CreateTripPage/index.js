@@ -111,7 +111,7 @@ class CreateTripPage extends Component {
             </select>
 
             <p>
-              <input type="submit" value="SUBMIT" id="submit" />
+              <input type="submit" value="SUBMIT" class="submit" />
             </p>
           </form>
         </div>
