@@ -41,7 +41,9 @@ class Summarypage extends Component {
         ).then(response =>
           response.json().then(apiData => {
             console.log(apiData);
-            let randomNumber = Math.floor(Math.random() * apiData.results.length);
+            let randomNumber = Math.floor(
+              Math.random() * apiData.results.length
+            );
             let destination = apiData.results[randomNumber].destination;
             let departure_date = apiData.results[randomNumber].departure_date;
             let return_date = apiData.results[randomNumber].return_date;
@@ -66,7 +68,7 @@ class Summarypage extends Component {
                 });
                 cities.map(city => {
                   if (city.city_code === this.state.destination) {
-                    this.setState({ destination: city.city_name });
+                    return this.setState({ destination: city.city_name });
                   }
                 });
               })
@@ -79,7 +81,7 @@ class Summarypage extends Component {
 
   onButtonClick(evt) {
     evt.preventDefault();
-    let id = this.props.match.params.id;
+    let id = this.state.trip_id;
     fetch(`trip/${id}/delete`).then(console.log("deleted"));
   }
 

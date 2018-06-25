@@ -2,7 +2,6 @@ body{
   margin: 0;
   padding: 0;
 }
-
 .background{
   background:url('https://engineering.illinois.edu/images/water-banner.jpg');
   background-size: cover;
@@ -10,23 +9,21 @@ body{
   height: 100vh;
   width: 100vw;
 }
-
 .Alltripspage{
 display: flex;
 flex-direction: row;
 flex-wrap: wrap;
 text-align: center;
 }
-
 .singleTrip{
-
   color: white;
   font-family: 'Open Sans';
-  background:rgba(100, 100, 100, .4);
+  background:rgba(100, 200, 300, .5);
   margin: 5px 30px;
-
+  border-radius: 10px;
+  height: 300px;
+  width: 300px;
 }
-
 h1{
   margin: 0;
   text-align: center;
@@ -34,9 +31,16 @@ h1{
   text-shadow: none;
   padding: 85px 0;
   color: #121212;
-
 }
-
 span{
   color: black
+}
+.label{
+    color:rgb(0,20,100);
+ text-shadow: none;
+  font-size: 20px;
+  padding:6px;
+  font-family: 'Open Sans' san-serif;
+  font-weight: 600;
+  letter-spacing: 2px;
 }
