@@ -33,6 +33,9 @@ class Alltripspage extends Component {
 
   render() {
     return <div className = 'background'>
+      <a href="https://www.facebook.com/groups/538776059826617/about/" class="fa fa-facebook"></a>
+      <a href="https://www.instagram.com/generalassembly/" class="fa fa-instagram"></a>
+
         <h1>All Previous Searches</h1>
         <div className="Alltripspage">
           {this.state.trips.map(trip => {

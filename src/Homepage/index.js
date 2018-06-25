@@ -6,6 +6,8 @@ class Homepage extends Component {
   render() {
     return (
         <div className="Homepage">
+        <a href="https://www.facebook.com/groups/538776059826617/about/" class="fa fa-facebook"></a>
+        <a href="https://www.instagram.com/generalassembly/" class="fa fa-instagram"></a>
           <div className="flex-wrapper">
             <h1>Anywhere But Here</h1>
             <h2>Luxurious escapes for less</h2>
