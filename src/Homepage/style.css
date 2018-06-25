@@ -49,6 +49,12 @@ border: 1px solid turquoise;
 padding: 10px;
 margin: 3px;
 border-radius:10px;
+text-align: center;
+}
+
+p{
+  font-size: 30px;
+  text-align: center;
 }
 
 a{
@@ -56,4 +62,9 @@ font-family: 'Open Sans', sans-serif;
 text-decoration: none;
 color: turquoise;
 font-size:18px;
+}
+
+button:hover {
+  background-color: turquoise;
+  color:black;
 }

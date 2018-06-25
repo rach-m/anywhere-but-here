@@ -14,10 +14,10 @@ class Homepage extends Component {
           <a href="https://www.facebook.com/groups/538776059826617/about/" className="fa fa-facebook"></a>
           <a href="https://www.instagram.com/generalassembly/" className="fa fa-instagram"></a>
         </ul>
-        
+
           <div className="flex-wrapper">
             <h1>Anywhere But Here</h1>
-            <h2>Luxurious escapes for less</h2>
+            <h2>Luxurious Escapes for Less</h2>
 
             <Link to="/trips/create">
               <button type = 'button'>Plan Your Escape</button>
