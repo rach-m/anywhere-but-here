@@ -43,6 +43,7 @@ span{
   color: black
 }
 
+
 .fa {
   padding: 15px;
   font-size: 22px;
@@ -57,16 +58,15 @@ span{
 }
 
 .fa-facebook {
-  background: #3B5998;
+  font-size: 30px;
+  border: none;
   color: white;
 }
 
 .fa-instagram {
-  
   color: #fff;
-  background: #d6249f;
-  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-  box-shadow: 0px 3px 10px rgba(0, 0, 0, .25);
+  font-size: 30px;
+  border: none;
 }
 
 .fa-linkedin-square {
@@ -82,7 +82,7 @@ color: white;
 
 
 
-ul {
+.narvBar ul {
   list-style-type: none;
   margin: 0;
   padding: 0px;

@@ -87,6 +87,7 @@ class EditPage extends Component {
     }
     return (
       <div className="CreateTrip">
+        
         <div className="formBox">
           <h1>Edit Trip</h1>
           <form onChange={this.onFormChange} onSubmit={this.onFormSubmit}>
@@ -132,6 +133,7 @@ class EditPage extends Component {
           </form>
         </div>
       </div>
+      
     );
   }
 }
