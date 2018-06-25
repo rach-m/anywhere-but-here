@@ -69,8 +69,8 @@ font-size: 15px;
 }
 
 
-.label{
-    color:turquoise;
+.labels{
+  color: turquoise;
   text-shadow: 1px 1px black;
   font-size: 20px;
   padding:6px;
@@ -79,10 +79,10 @@ font-size: 15px;
   letter-spacing: 2px;
 }
 
-span{
+.span{
   color: black;
   text-shadow: none;
-font-size: 15px;
+  font-size: 15px;
 }
 
 
@@ -95,12 +95,12 @@ font-size: 15px;
     height: 50px;
   }
 
-  label{
+  .label{
     font-size: 10px;
     padding: none;
 
   }
-  span{
+  .span{
     font-size: 10px;
   }
 p{

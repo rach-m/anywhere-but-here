@@ -18,8 +18,10 @@ class Summarypage extends Component {
       duration: "",
       budget: "",
       trip_id: "",
-      image: []
+      image: [],
+      delete: false
     };
+     this.onButtonClick = this.onButtonClick.bind(this);
   }
 
   //This component did mount first fetches from the database then
@@ -61,6 +63,7 @@ class Summarypage extends Component {
               price,
               trip_id
             });
+            console.log(this.state.trip_id)
             // let code = this.state.destination;
             fetch(`/cities.json`).then(response =>
               response.json().then(cities => {
@@ -72,15 +75,6 @@ class Summarypage extends Component {
                     return this.setState({ destination: city.city_name });
                   }
                 });
-                // fetch(`Authorization: YOUR_API_KEY" "https://api.pexels.com/v1/search?query=people"`).then(
-                //   response =>
-                //     response.json().then(image => {
-                //       console.log(image);
-                //       this.setState({
-                //         image: image
-                //       });
-                //     })
-                // );
               })
             );
           })
@@ -92,30 +86,36 @@ class Summarypage extends Component {
   onButtonClick(evt) {
     evt.preventDefault();
     let id = this.state.trip_id;
-    fetch(`trip/${id}/delete`).then(console.log("deleted"));
+    fetch(`${id}/delete`,{
+      method: "POST",
+      body: JSON.stringify(),
+      headers: {
+        "Content-type": "application/json"
+      }}).then(()=>{
+      this.setState({
+        delete:true
+      })
+     if(this.state.delete){<Redirect to="/" />;}
+    })
   }
 
   render() {
-    return (
-      <div className="Summarypage">
+    return <div className="Summarypage">
         <div className="info-box">
           <div className="info">
             <h2>Your Trip:</h2>
-            <img
-              className="destination"
-              src="https://cdn-image.travelandleisure.com/sites/default/files/styles/1600x1000/public/1508524504/paris-ROOFTOP1017.jpg?itok=arOAqg7r"
-            />
-            <p className="label">
-              Destination: <span>{this.state.destination}</span>
+            <img className="destination" src="https://travel.state.gov/content/dam/passports/passport-images/passport%20book.png" />
+            <p className="labels">
+              Destination: <span className = 'span'>{this.state.destination}</span>
             </p>
-            <p className="label">
-              Departure Date: <span>{this.state.departure_date}</span>
+            <p className="labels">
+              Departure Date: <span className = 'span'>{this.state.departure_date}</span>
             </p>
-            <p className="label">
-              Return Date: <span>{this.state.return_date}</span>
+            <p className="labels">
+              Return Date: <span className = 'span'>{this.state.return_date}</span>
             </p>
-            <p className="label">
-              Price: <span>${this.state.price}</span>
+            <p className="labels">
+              Price: <span className = 'span'>${this.state.price}</span>
             </p>
             <div className="buttons">
               <Link to={`/trips/${this.state.trip_id}/edit`}>
@@ -123,11 +123,11 @@ class Summarypage extends Component {
                   Edit
                 </button>
               </Link>
-              <Link to={`/trips/${this.state.trip_id}/delete`}>
+
                 <button type="button" onClick={this.onButtonClick}>
                   Delete
                 </button>
-              </Link>
+
               <Link to={`/trips`}>
                 <button type="button" value="All-Trips">
                   All Trips
@@ -136,8 +136,7 @@ class Summarypage extends Component {
             </div>
           </div>
         </div>
-      </div>
-    );
+      </div>;
   }
 }
 
