@@ -75,18 +75,28 @@ class CreateTripPage extends Component {
       return <Redirect to={`/trips/${id}.json`} />;
     }
     return (
+      <div className="navBar">
+        <ul>
+          <li><a href="http://localhost:3000/">Home</a></li>
+          <li><a href="http://localhost:3000/trips/create">New</a></li>
+          <li><a href="contact.asp">Contact</a></li>
+          <li><a href="http://localhost:3000/trips">Trips</a></li>
+          <a href="https://www.facebook.com/groups/538776059826617/about/" className="fa fa-facebook"></a>
+          <a href="https://www.instagram.com/generalassembly/" className="fa fa-instagram"></a>
+        </ul>
       <div className="CreateTrip">
         <div className="formBox">
           <h1>New Trip</h1>
           <form onChange={this.onFormChange} onSubmit={this.onFormSubmit}>
             <p>
-              <label for="budget">Budget:</label>
+              <label for="budget">Budget:</label> 
               <input
                 type="number"
                 name="budget"
                 placeholder="$500"
                 value={this.state.budget}
               />
+
             </p>
             <p>
               <label for="departure_date">Departing:</label>
@@ -115,6 +125,7 @@ class CreateTripPage extends Component {
             </p>
           </form>
         </div>
+      </div>
       </div>
     );
   }
