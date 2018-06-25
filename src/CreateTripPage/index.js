@@ -86,10 +86,10 @@ class CreateTripPage extends Component {
         </ul>
       <div className="CreateTrip">
         <div className="formBox">
-          <h1>New Trip</h1>
+          <h1 className = 'new'>New Trip</h1>
           <form onChange={this.onFormChange} onSubmit={this.onFormSubmit}>
             <p>
-              <label for="budget">Budget:</label> 
+              <label for="budget">Budget:</label>
               <input
                 type="number"
                 name="budget"

@@ -83,10 +83,11 @@ app.put("/trips/:id/edit.json", (request, response) => {
 });
 
 
-app.post('/trips/:id/delete', (request, reponse) =>{
+app.delete('/trips/:id/delete.json', (request, response) =>{
   let id = request.params.id
-  Trip.delete(id).then(
-    console.log('deleted')
+  Trip.delete(id).then(data=>{
+   response.json({deleted:true})
+  }
   )
 })
 

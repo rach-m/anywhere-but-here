@@ -166,3 +166,12 @@ li a:hover {
   opacity: .9;
 }
 
+.new{
+  padding-top: 60px;
+  padding-bottom: 30px;
+  font-size: 55px;
+}
+
+p{
+  padding: 10px 0;
+}

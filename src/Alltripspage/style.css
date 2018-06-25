@@ -1,11 +1,12 @@
 body{
   margin: 0;
   padding: 0;
+  background: black;
 }
 .background{
   background:url('http://diarioveaonline.com/wp-content/uploads/2018/06/awesome-hd-wallpapers-for-desktop-windows-8-46.jpg');
   background-size: cover;
-  background-repeat: no-repeat;
+  /* background-repeat: no-repeat; */
   height: 100vh;
   width: 100vw;
 }

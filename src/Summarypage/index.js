@@ -19,7 +19,7 @@ class Summarypage extends Component {
       budget: "",
       trip_id: "",
       image: [],
-      delete: false
+      destroyed: false
     };
      this.onButtonClick = this.onButtonClick.bind(this);
   }
@@ -85,21 +85,27 @@ class Summarypage extends Component {
 
   onButtonClick(evt) {
     evt.preventDefault();
+
     let id = this.state.trip_id;
-    fetch(`${id}/delete`,{
-      method: "POST",
-      body: JSON.stringify(),
+
+    fetch(`${id}/delete.json`,{
+      method: "DELETE",
+      // body: JSON.stringify(data),
       headers: {
-        "Content-type": "application/json"
-      }}).then(()=>{
-      this.setState({
-        delete:true
+        "Content-type": "application/json",
+      }}).then(data => {
+this.setState({
+  destroyed:true
+})
+        console.log('got here')
+          ;
       })
-     if(this.state.delete){<Redirect to="/" />;}
-    })
   }
 
   render() {
+    if(this.state.destroyed){
+      return <Redirect to="/trips" />;
+    }
     return <div className="Summarypage">
         <div className="info-box">
           <div className="info">
