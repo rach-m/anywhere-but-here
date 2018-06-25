@@ -30,6 +30,16 @@ body{
 
 }
 
+.navBar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0px;
+  overflow: hidden;
+  background: rgba(100, 100, 100, .4);
+}
+
+
+
 label {
   color:rgb(317, 3, 140);
   text-shadow: .5px .5px black;
@@ -81,3 +91,82 @@ input.submit:hover {
   background-color: rgb(317, 3, 140);
   color:turquoise;
 }
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0px;
+  overflow: hidden;
+  background: rgba(100, 100, 100, .4);
+}
+
+li {
+  float: right;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  position: relative;
+  float: right;
+}
+
+/* Change the link color to #111 (black) on hover */
+
+li a:hover {
+  background-color: turquoise;
+}
+
+.label {
+  color: rgb(0, 20, 100);
+  text-shadow: none;
+  font-size: 20px;
+  padding: 6px;
+  font-family: 'Open Sans' san-serif;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+
+.fa {
+  padding: 15px;
+  font-size: 22px;
+  height: 15px;
+  width: 15px;
+  text-align: center;
+  text-decoration: none;
+  border: 1px solid #40e0d0;
+  border-radius: 40px;
+  position: relative;
+  float: right;
+}
+
+.fa-facebook {
+  font-size: 30px;
+  border: none;
+  color: white;
+}
+
+.fa-instagram {
+  color: #fff;
+ font-size: 30px;
+ border: none;
+}
+
+.fa-linkedin-square {
+  font-size: 24px;
+  background-color: blue;
+  color: white;
+}
+
+.fa:hover {
+  opacity: 0.7;
+}
+
+.navBar ul {
+  background: rgba (100, 100, 100, .9);
+  opacity: .9;
+}
+
