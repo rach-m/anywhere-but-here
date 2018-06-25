@@ -121,7 +121,6 @@ this.setState({
         </ul>
       <div className="Summarypage">
 
->>>>>>> master
         <div className="info-box">
           <div className="info">
             <h2>Your Trip:</h2>
