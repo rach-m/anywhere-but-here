@@ -7,6 +7,10 @@ const City = require('./models/City')
 // Create a new Express application (web server)
 const app = express();
 
+
+// Static hosting for built files
+app.use("/static", express.static("./build/static/"));
+
 // Set the port based on the environment variable (PORT=8080 node server.js)
 // and fallback to 4567
 const PORT = process.env.PORT || 4567;
