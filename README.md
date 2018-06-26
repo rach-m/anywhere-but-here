@@ -85,11 +85,15 @@ Code Snippet - Fetching the API data from our Create functionality was particula
 <br>
 User Stories:
 <br>
+<br>
 New Trip Page: As a user I want to be able to create a new trip under a specific budget
+<br>
 <br>
 See All Page: As a user I want to be able to see previous searches
 <br>
+<br>
 Edit Page: As a user I want to be able to update a trip budget or information to reflect my current needs
+<br>
 <br>
 Delete Functionality: As a user I want to be able to delete a trip if I no longer need it/if it is no longer available
 <br>
