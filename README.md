@@ -97,7 +97,9 @@ Edit Page: As a user I want to be able to update a trip budget or information to
 <br>
 Delete Functionality: As a user I want to be able to delete a trip if I no longer need it/if it is no longer available
 <br>
-
+<br>
+<br>
+<br>
 We feel this project would be especially useful to students or anyone trying to get away while on a budget. Some issues we ran into involved actually fetching the 3rd Party API data and implementing delete functonality. In the future we would like to add ecommerce and customer service chat.
 <br> <br> <br>
 
