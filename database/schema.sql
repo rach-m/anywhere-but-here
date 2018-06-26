@@ -1,6 +1,6 @@
-CREATE DATABASE travel_db;
+/* CREATE DATABASE travel_db;
 
-\c travel_db;
+-- \c travel_db;*/
 
 DROP TABLE trips;
 DROP TABLE cities;
