@@ -39,19 +39,19 @@ a:hover{
   color: gray
 }
 
-.box1 p {
+.box1 {
   grid-area: a;
   height: 25px;
   color: turquoise;
 }
 
-.box2 p {
+.box2 {
   grid-area: b;
   height: 25px;
   color: turquoise;
 }
 
-.box3 p {
+.box3 {
   grid-area: c;
   height: 25px;
   color: turquoise;
